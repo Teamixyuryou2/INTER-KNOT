@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-row bg-stone-900 h-[1000px]">
+    <div className="flex flex-row bg-stone-900 h-screen overflow-hidden">
 
       {/* Navbar */}
       <div className="fixed relative flex flex-col h-full w-[100px] lg:min-w-[100px] lg:w-[150px] bg-stone-800 z-">
@@ -39,10 +39,10 @@ export default function Home() {
         <div className="relative flex flex-col h-full min-w-[400px] w-[60%] lg:w-1/4 gap-3 items-center w-1/3 text-black">
           {/*Search */}
 
-          <div className="bg-white min-w-[300px] w-[90%] h-[500px] ">
+          <div className="bg-white min-w-[300px] w-[90%] max-w-[600px] h-1/2 ">
 
           </div>
-          <div className="bg-white min-w-[300px] w-[90%] h-[500px] ">
+          <div className="bg-white min-w-[300px] w-[90%] max-w-[600px] h-1/2 ">
 
           </div>
 
