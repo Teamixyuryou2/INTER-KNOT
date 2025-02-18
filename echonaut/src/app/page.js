@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
 
       {/* Navbar */}
       <div className="fixed relative flex flex-col h-full w-[100px] lg:min-w-[100px] lg:w-[150px] bg-stone-800 z-">
-
+        <Navbar/>
 
       </div>
       <div className="sticky flex z-50">

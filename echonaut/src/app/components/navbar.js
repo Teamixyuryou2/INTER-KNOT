@@ -1,101 +1,37 @@
+import { faBell, faEnvelope, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Navbar(){
     return(
-            <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-              <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <Image
-                  className="dark:invert"
-                  src="/next.svg"
-                  alt="Next.js logo"
-                  width={180}
-                  height={38}
-                  priority
-                />
-                <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-                  <li className="mb-2">
-                    Get started by editing{" "}
-                    <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                      src/app/page.js
-                    </code>
-                    .
-                  </li>
-                  <li>Save and see your changes instantly.</li>
-                  <li>This is the landing branch</li>
-                </ol>
-        
-                <div className="flex gap-4 items-center flex-col sm:flex-row">
-                  <a
-                    className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-                    href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      className="dark:invert"
-                      src="/vercel.svg"
-                      alt="Vercel logomark"
-                      width={20}
-                      height={20}
-                    />
-                    Deploy now
-                  </a>
-                  <a
-                    className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-                    href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read our docs
-                  </a>
-                </div>
-              </main>
-              <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-                <a
-                  className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                  href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    aria-hidden
-                    src="/file.svg"
-                    alt="File icon"
-                    width={16}
-                    height={16}
-                  />
-                  Learn
-                </a>
-                <a
-                  className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                  href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    aria-hidden
-                    src="/window.svg"
-                    alt="Window icon"
-                    width={16}
-                    height={16}
-                  />
-                  Examples
-                </a>
-                <a
-                  className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                  href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    aria-hidden
-                    src="/globe.svg"
-                    alt="Globe icon"
-                    width={16}
-                    height={16}
-                  />
-                  Go to nextjs.org →
-                </a>
-              </footer>
+      <nav className="sticky top-0 left-0 justify-self-start h-screen w-full min-w-[100px] m-0 bg-gray-900 text-white shadow-lg justify-items-center flex flex-col">
+        <div id="site-logo" className="flex justify-center p-3">
+          Echonaut 
+        </div>
+        <div className="justify-center flex w-full">
+          <div id="home-nav-button" className="flex justify-start p-2 h-[39px] w-[90%] hover:brightness-90 hover:cursor-pointer hover:bg-gray-800 rounded-2xl transition-all duration-150 ease-in">
+            <FontAwesomeIcon icon={faHouse} className="scale-100 mx-5 mt-[3px]" />
+            <div className="hidden lg:block">
+              Home
             </div>
+          </div>
+        </div>
+        <div className="justify-center flex w-full">
+          <div id="msg-nav-button" className="flex justify-start p-2 h-[39px] w-[90%] hover:brightness-90 hover:cursor-pointer hover:bg-gray-800 rounded-2xl transition-all duration-150 ease-in">
+            <FontAwesomeIcon icon={faEnvelope} className="scale-100 mx-5 mt-[3px] lg:scale-125" />
+            <div className="hidden lg:block">
+              Messages
+            </div>
+          </div>
+        </div>
+        <div className="justify-center flex w-full">
+          <div id="msg-notif-button" className="flex justify-start p-2 h-[39px] w-[90%] hover:brightness-90 hover:cursor-pointer hover:bg-gray-800 rounded-2xl transition-all duration-150 ease-in">
+            <FontAwesomeIcon icon={faBell} className="scale-100 mx-5 mt-[3px]" />
+            <div className="hidden lg:block">
+              Notifications
+            </div>
+          </div>
+        </div>
+        <button className="bg-slate-50 text-black w-[90%] p-3 mx-[5%] my-2 block justify-center rounded-md hover:brightness-[85%] transition-all duration-150 ease-in">Echo</button>
+      </nav>
     );
 }
