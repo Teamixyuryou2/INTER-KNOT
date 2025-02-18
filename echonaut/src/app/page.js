@@ -2,12 +2,19 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-row bg-stone-900">
+    <div className="flex flex-row bg-stone-900 h-[1000px]">
 
       {/* Navbar */}
-      <div className="fixed flex flex-col h-screen w-[100px] bg-stone-800">
+      <div className="fixed relative flex flex-col h-full w-[100px] lg:min-w-[100px] lg:w-[150px] bg-stone-800 z-">
 
 
+      </div>
+      <div className="sticky flex z-50">
+        <div className="fixed flex h-[75px] w-[95%] bg-stone-300 justify-center p-50 opacity-60">
+          <div className="flex flex-col h-[30px] w-[400px] opacity-[50%] bg-stone-800 rounded-2xl px-8 justify-center">
+            <input type="text" className="bg-transparent border-none focus:outline-none text-white" placeholder="Search . . ."/>
+          </div>
+        </div>
       </div>
 
       {/* MainPage */}
@@ -15,48 +22,43 @@ export default function Home() {
 
         {/* Personal */}
 
-        <div className="flex flex-col h-full w-1/3 gap-3 items-end w-1/3 text-black bg-gray-500">
-          <div className="flex bg-white min-w-[300px] w-[30%] lg:h-[500px]">
+        <div className="flex flex-col h-full w-1/3 gap-3 items-end w-1/3 text-black">
+          <div className="hidden xl:block bg-white min-w-[300px] w-[30%] xl:h-[500px]">
             Hello
           </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
+          <div className="hidden xl:block bg-white min-w-[300px] w-[30%] xl:h-[500px] ">
             Hello
           </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
+          <div className="hidden xl:block bg-white min-w-[300px] w-[30%] xl:h-[500px] ">
             Hello
           </div>
         </div>
 
         {/* Feed */}
 
-        <div className="flex flex-col h-full w-1/4 gap-3 items-center w-1/3 text-black bg-gray-300">
+        <div className="relative flex flex-col h-full min-w-[400px] w-[60%] lg:w-1/4 gap-3 items-center w-1/3 text-black">
           {/*Search */}
-          <div className="relative flex flex-col h-[30px] w-full opacity-[50%] bg-stone-800 rounded-2xl px-8 justify-center">
-            <input type="text" className="bg-transparent border-none focus:outline-none text-white" placeholder="Search . . ."/>
+
+          <div className="bg-white min-w-[300px] w-[90%] h-[500px] ">
 
           </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
+          <div className="bg-white min-w-[300px] w-[90%] h-[500px] ">
 
           </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
 
-          </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
-
-          </div>
         </div>
 
 
         {/* For you */}
 
-        <div className="flex flex-col h-full w-1/3 gap-3 items-start w-1/3 text-black bg-gray-400">
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
+        <div className="flex flex-col h-full w-1/3 gap-3 items-start w-[50%] lg:w-1/3 text-black ">
+          <div className="hidden md:block bg-white min-w-[200px] w-[70%]  h-[500px]">
+            Hey
+          </div>
+          <div className="hidden md:block bg-white min-w-[200px] w-[70%] h-[500px] ">
 
           </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
-
-          </div>
-          <div className="bg-white min-w-[300px] w-[30%] lg:h-[500px] ">
+          <div className="hidden md:block bg-white min-w-[200px] w-[70%]  h-[500px] ">
 
           </div>
         </div>
