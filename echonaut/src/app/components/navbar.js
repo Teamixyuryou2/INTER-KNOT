@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Navbar(){
     return(
 
-      <nav className="sticky top-0 left-0 justify-self-start h-screen w-[17%] min-w-[100px] m-0 bg-gray-900 text-white shadow-lg justify-items-center flex flex-col">
+      <nav className="sticky top-0 left-0 justify-self-start h-screen w-full min-w-[100px] m-0 bg-gray-900 text-white shadow-lg justify-items-center flex flex-col">
         <div id="site-logo" className="flex justify-center p-3 text-2xl">
           Echonaut 
         </div>

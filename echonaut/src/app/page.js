@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-row bg-stone-900 h-screen overflow-hidden">
 
       {/* Navbar */}
-      <div className="fixed relative flex flex-col h-full w-[100px] lg:min-w-[100px] lg:w-[150px] bg-stone-800 z-">
+      <div className="fixed relative flex flex-col h-full w-[150px] lg:min-w-[100px] lg:w-[17%] bg-stone-800 z-">
         <Navbar/>
 
       </div>
