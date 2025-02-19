@@ -7,7 +7,7 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-row bg-stone-900 h-screen min-w-[500px] overflow-hidden">
+    <div className="flex flex-row bg-[url(../../public/assets/Mindscape_Ellen_Joe_Partial.png)] bg-no-repeat bg-cover bg-[right] bg-stone-900 h-screen min-w-[500px] overflow-hidden">
 
       {/* Navbar */}
       <div className="fixed relative flex flex-col h-full w-[200px] lg:min-w-[100px] lg:w-[17%] bg-stone-800">
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex flex-col w-full">
 
         {/* MainPage */}
-        <div className="flex flex-row w-full h-full py-10 justify-center">
+        <div className="flex flex-row w-full h-full py-10 opacity-[85%] justify-center">
 
           {/* Personal */}
 
