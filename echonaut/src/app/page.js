@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex flex-col w-full">
 
         {/* MainPage */}
-        <div className="flex flex-row w-full h-full py-10 opacity-[85%] justify-center">
+        <div className="flex flex-row w-full h-full py-10 opacity-[85%] justify-center text-xl font-bold">
 
           {/* Personal */}
 
@@ -35,21 +35,21 @@ export default function Home() {
                 </div>
               </div>
               <div className="h-full w-full bg-stone-300 p-5 text-pretty text-balance">
-                I LOVE AMONGUS I LOVE AMONGUS I LOVE AMONGUS I LOVE AMONGUS I LOVE AMONGUS I LOVE AMONGUS
+                New Eridu hotest topic in today !!!
               </div>
 
             </div>
 
-            <div className="hidden lg:block bg-white w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-stone-600">Hello</div>
+            <div className="hidden lg:block bg-white w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-stone-600">Guys is it true that there is a golden bangboo sighting?</div>
             <div className="hidden lg:block bg-white w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-stone-700">Hello</div>
 
           </div>
 
           {/* Feed */}
 
-          <div className="relative flex flex-col h-screen min-w-[400px] w-[60%] max-w-[400px] lg:w-1/4 gap-3 items-center text-black overflow-y-scroll md:border-r-2 lg:border-x-2 scrollbar-hidden ">
+          <div className="relative flex flex-col h-screen min-w-[400px] w-[60%] max-w-[400px] lg:w-1/4  items-center text-black overflow-y-scroll md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
 
-            <div className="relative flex flex-col min-w-[400px] w-[60%] lg:w-1/4 my-5 items-center text-black space-y-4 md:border-r-2 lg:border-x-2">
+            <div className="relative flex flex-col min-w-[400px] w-full lg:w-1/4 my-5 items-center text-black space-y-4 ">
               {/* Turn this into a component */}
               <div className="bg-white min-w-[300px] w-[90%] max-w-[600px] h-[500px] bg-stone-400">a</div>
               <div className="bg-white min-w-[300px] w-[90%] max-w-[600px] h-[500px] bg-stone-500">b</div>
@@ -66,8 +66,6 @@ export default function Home() {
             </div>
 
           </div>
-
-          
 
 
           {/* For you */}
