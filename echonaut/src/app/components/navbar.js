@@ -4,13 +4,17 @@ import { faBell, faCaretSquareUp, faEnvelope, faHouse, faPenSquare, faPenToSquar
 import { Navbutton } from './navbutton';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Ellen, Belle} from '../../../public/assets/presets/presets.json';
 
 export default function Navbar(){
   const [toggle, setToggle] = useState(0);
-  function clickHandler(){setToggle(!toggle)}
+  function clickHandler(){setToggle(!toggle)};
+
+  const [Profile, setProfile] = useState(Ellen);
+  function profileSwap(Agent){setProfile(Agent)};
 
     return(
-      <nav className="sticky top-0 left-0 z-50 justify-self-start h-screen w-full min-w-[100px] m-0 bg-stone-800 text-white shadow-lg justify-items-center flex flex-col select-none">
+      <nav className="bg-stone-800 text-white sticky top-0 left-0 z-50 justify-self-start h-screen w-full min-w-[100px] m-0 shadow-lg justify-items-center flex flex-col select-none">
         <header id="site-logo" className="flex justify-center my-3 p-3 text-2xl">
           <Image src='/assets/INTER-KNOT.png' width={80} height={80} alt="logo" />
         </header>
@@ -19,27 +23,40 @@ export default function Navbar(){
           <a onClick={clickHandler} className="flex justify-center my-2 hover:cursor-pointer group">
             <div id="user-container" className="w-[94%] rounded-lg backdrop-brightness-125">
               <div id="user" className="flex flex-col 2xl:flex-row justify-center items-center my-5">
-                <Image src="/assets/Ellen/Avatar_Ellen_Joe.png" width={80} height={80} alt="profile-pic"/>
+                <Image src={Profile.profilePic} width={80} height={80} className='rounded-full border-2 border-white' alt="profile-pic"/>
                 <div id="profile-text" className="hidden md:flex flex-col mx-3 p-2">
                   <div id="display-name" className="flex justify-center 2xl:justify-start font-bold text-xl tracking-wide">
-                    Ellen Joe
+                    {Profile.displayName}
                   </div>
                   <div id="username" className="flex justify-center opacity-[60%]">
-                    @nomnomshark
+                    {Profile.userName}
                   </div>
                 </div>
               </div>
             </div>
           </a>
           <div className={toggle ? "absolute w-auto top-28 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold group-focus-within:scale-100 transition-all duration-150 origin-bottom-left" 
-              : "absolute w-auto top-24 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold scale-0 transition-all duration-150 origin-bottom-left"}>
-              Switch Accounts
+                : "absolute items-start w-auto top-24 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold scale-0 transition-all duration-150 origin-bottom-left"}>
+            <div className="flex flex-col justify-start">
+                Switch Accounts
+                <div className='flex flex-col'>
+                  <button onClick={() => profileSwap(Belle)} className="h-10 w-[90%] m-2 flex flex-row justify-evenly">
+                    <Image src={Belle.profilePic} width={40} height={40} className="block rounded-full bg-white" alt="profile-pic"/>
+                    <div className="flex p-2 justify-center text-lg">Belle</div>
+                  </button>
+                  <button onClick={() => profileSwap(Ellen)} className="h-10 w-[90%] m-2 flex flex-row justify-evenly ">
+                    <Image src={Ellen.profilePic} width={40} height={40} className="rounded-full bg-white" alt="profile-pic"/>
+                    <div className="flex p-2 justify-center text-lg">Ellen</div>
+                  </button>
+                </div>
+            </div>
           </div>
+
         </>
 
         <div className="justify-center flex flex-col w-full">
           <div className="justify-center flex w-full">
-            <Navbutton label="Home" graphic={faHouse} linkTo={"/"} />
+            <Navbutton label="Home" graphic={faHouse} linkTo={"/"} buttonAccentColor={"text-pink-600"}/>
           </div>
           
           <div className="justify-center flex w-full">

@@ -1,0 +1,15 @@
+{
+    "Ellen": {
+        "displayName": "Ellen Joe",
+        "userName": "@nomnomshark",
+        "profilePic": "/assets/Ellen/Avatar_Ellen_Joe.png",
+        "bgColor": "bg-pink-600"
+    },
+
+    "Belle": {
+        "displayName": "Belle",
+        "userName": "@Phaethon",
+        "profilePic": "/assets/Belle/Avatar_Belle1.png",
+        "bgColor": "bg-orange-200"
+    }
+}
