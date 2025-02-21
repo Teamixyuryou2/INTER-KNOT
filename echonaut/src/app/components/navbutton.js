@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Navbutton = ({graphic, label, onClick, linkTo}) => {
     return(
-        <a href={linkTo} className="flex justify-center xl:justify-start m-1 p-3 h-[50px] w-[90%] hover:brightness-90 hover:cursor-pointer hover:bg-stone-900 rounded-2xl transition-all duration-150 ease-in">
+        <a href={linkTo} className="flex justify-center xl:justify-start m-1 p-3 h-[50px] w-[90%] hover:brightness-90 hover:cursor-pointer hover:backdrop-brightness-75 rounded-2xl transition-all duration-150 ease-in hover:text-pink-600">
             <FontAwesomeIcon icon={graphic} className="scale-[150%] mx-5 mt-[3px]" />
-            <div className="hidden xl:block text-xl tracking-wide">
+            <div className="hidden xl:block text-lg tracking-wide">
                 {label}
             </div>
         </a>
