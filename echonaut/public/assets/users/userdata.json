@@ -1,0 +1,46 @@
+{
+    "Koleda":{
+        "avatar": "/assets/Koleda/koledaavatar.png",
+        "name": "Koleda Belobog",
+        "posts": [
+            "Need more workers",
+            "We took on a new construction project",
+            "I respect my employees"
+        ],
+        "image": [
+            "https://sjc1.vultrobjects.com/cucdn/gallery-47/art/zzz-key-art.jpg",
+            "https://sjc1.vultrobjects.com/cucdn/gallery-47/art/zzz-faction-belobog-heavy-industries.jpg",
+            "https://sjc1.vultrobjects.com/cucdn/gallery-47/art/zzz-faction-belobog-heavy-industries-artwork.jpg"
+        ]
+
+    },
+    "Caesar":{
+        "avatar": "/assets/Caesar/caesaravatar.png",
+        "name": "Caesar King",
+        "posts": [
+            "A MEAL FIT FOR A KING!!",
+            "Just took over the outer ring!",
+            "There's way too much work for me to do as overlord!"
+        ],
+        "image" : [
+            "https://sjc1.vultrobjects.com/cucdn/gallery-47/art/zzz-faction-sons-of-calydon.jpg",
+            "https://pbs.twimg.com/media/GYDVn7SXsAA4taD?format=jpg&name=large",
+            "https://pbs.twimg.com/media/GYSl67_XQAAOMyB?format=jpg&name=4096x4096"
+        ]
+
+    },
+    "Lighter":{
+        "avatar": "/assets/Lighter/lighteravatar.png",
+        "name": "Lighter",
+        "posts": [
+            "My red scarf",
+            "We bought too much Nitro Fuel . . .",
+            "Challenge me 1 on 1"
+        ],
+        "image" : [
+            "https://sjc1.vultrobjects.com/cucdn/gallery-47/art/zzz-faction-sons-of-calydon.jpg",
+            "https://pbs.twimg.com/media/GYDVn7SXsAA4taD?format=jpg&name=large",
+            "https://pbs.twimg.com/media/GYSl67_XQAAOMyB?format=jpg&name=4096x4096"
+        ]
+    }
+}
