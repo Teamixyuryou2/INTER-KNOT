@@ -4,13 +4,14 @@ import { faBell, faCaretSquareUp, faEnvelope, faHouse, faPenSquare, faPenToSquar
 import { Navbutton } from './navbutton';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {Ellen, Belle} from '../../../public/assets/presets/presets.json';
+import userSettings from '../../../public/assets/presets/presets.json';
+
 
 export default function Navbar(){
   const [toggle, setToggle] = useState(0);
   function clickHandler(){setToggle(!toggle)};
 
-  const [Profile, setProfile] = useState(Ellen);
+  const [Profile, setProfile] = useState(userSettings.Ellen);
   function profileSwap(Agent){setProfile(Agent)};
 
     return(
@@ -35,23 +36,23 @@ export default function Navbar(){
               </div>
             </div>
           </a>
+
           <div className={toggle ? "absolute w-auto top-28 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold group-focus-within:scale-100 transition-all duration-150 origin-bottom-left" 
                 : "absolute items-start w-auto top-24 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold scale-0 transition-all duration-150 origin-bottom-left"}>
             <div className="flex flex-col justify-start">
                 Switch Accounts
                 <div className='flex flex-col'>
-                  <button onClick={() => profileSwap(Belle)} className="h-10 w-[90%] m-2 flex flex-row justify-evenly">
-                    <Image src={Belle.profilePic} width={40} height={40} className="block rounded-full bg-white" alt="profile-pic"/>
+                  <button onClick={() => profileSwap(userSettings.Belle)} className="h-10 w-[90%] m-2 flex flex-row justify-evenly">
+                    <Image src={userSettings.Belle.profilePic} width={40} height={40} className="block rounded-full bg-white" alt="profile-pic"/>
                     <div className="flex p-2 justify-center text-lg">Belle</div>
                   </button>
-                  <button onClick={() => profileSwap(Ellen)} className="h-10 w-[90%] m-2 flex flex-row justify-evenly ">
-                    <Image src={Ellen.profilePic} width={40} height={40} className="rounded-full bg-white" alt="profile-pic"/>
+                  <button onClick={() => profileSwap(userSettings.Ellen)} className="h-10 w-[90%] m-2 flex flex-row justify-evenly ">
+                    <Image src={userSettings.Ellen.profilePic} width={40} height={40} className="rounded-full bg-white" alt="profile-pic"/>
                     <div className="flex p-2 justify-center text-lg">Ellen</div>
                   </button>
                 </div>
             </div>
           </div>
-
         </>
 
         <div className="justify-center flex flex-col w-full">
@@ -68,7 +69,7 @@ export default function Navbar(){
           </div>
 
           <div className="justify-center flex w-full">
-            <Navbutton label="Profile" graphic={faUser} linkTo={"https://www.google.com"} />
+            <Navbutton label="Profile" graphic={faUser} linkTo={"/profile"} />
           </div>
         </div>
 
