@@ -25,10 +25,16 @@ export default function Feed({ name, image , message, profilepicture }){
                 <img src={ image } alt="" className="w-full h-full object-cover" />
             </div>
 
-            <div className="flex flex-row bg-stone-800 w-full h-full text-white bg-opacity-65 justify-end">
-                <FontAwesomeIcon icon={faHeart} className="w-[40px] h-[40px]"/>
-                <FontAwesomeIcon icon={faRetweet} className="w-[40px] h-[40px]"/>
-                <FontAwesomeIcon icon={faComment} className="w-[40px] h-[40px]"/>
+            <div className="flex flex-row bg-stone-800 w-full h-full text-white bg-opacity-65 justify-end p-4">
+                <div>
+                    <FontAwesomeIcon icon={faHeart} className="w-[40px] h-[40px] hover:text-red-400"/>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faRetweet} className="w-[40px] h-[40px] hover:text-green-400"/>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faComment} className="w-[40px] h-[40px] hover:text-blue-400"/>
+                </div>
             </div>
         </div>
     )

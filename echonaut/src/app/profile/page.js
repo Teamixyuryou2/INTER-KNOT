@@ -43,7 +43,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="h-full w-full  p-5 text-pretty text-balance bg-opacity-65">
-                New Profile
+                New Eridu hotest topic in today !!!
               </div>
 
             </div>
@@ -53,30 +53,68 @@ export default function Home() {
 
           </div>
 
-          {/* Feed */}
+          {/* Profile */}
 
-          <div className="relative flex flex-col h-screen min-w-[455px] md:min-w-[400px] w-[60%] max-w-[450px] lg:w-full  items-center text-black overflow-y-scroll pr-[60px] md:pl-0 md:pr-0 sm:pr-4 lg:pr-0 md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
+          <div className="flex flex-col h-screen min-w-[300px] md:min-w-[500px] w-[80%] max-w-[500px] lg:w-full bg-stone-400 items-center text-black overflow-y-scroll  md:pl-0 md:pr-0  lg:pr-0 md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
 
-            <div className="relative flex flex-col min-w-[450px] w-full lg:w-1/4 my-5 items-center text-black space-y-4 ">
-              {/* Turn this into a component */}
+            <div className="flex flex-col bg-stone-500 w-full w-full my-5 items-center text-black">
+
+              <div className="flex flex-col h-[600px] w-full bg-stone-400">
+
+                {/* Background */}
+                <div className="w-full min-h-[300px] bg-[url(../../public/assets/Ellen/Mindscape_Ellen_Joe_Partial.png)] bg-no-repeat bg-cover bg-right"></div>
+
+                {/* Header*/}
+                <div className="relative w-full min-h-[200px] h-full bg-stone-700">
+
+                  {/* Profile Picture */}
+                  <div className="absolute -top-20 md:-top-20 mx-4  w-[125px] h-[125px] md:w-[175px] md:h-[175px] bg-white rounded-full border-4 border-stone-700">
+                    
+                  </div>
+                  {/* Name */}
+                  <div className="flex flex-col pt-[110px] px-5 text-overflow-hidden text-white">
+                    <div>
+                      Ellen Joe
+                    </div>
+                    <div>
+                      @nomnomshark
+                    </div>
+                    <div className="mt-5">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    </div>
+                  </div>
 
 
-              <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
-              <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
-              <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+                </div>
 
-              <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber2]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
-              <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber2]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
-              <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber2]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+              </div>
 
-              <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
-              <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
-              <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+              {/* Changeable UI Controller */}
+              <div className="flex flex-row w-full h-[40px] bg-stone-700 justify-around text-center text-white text-sm sm:text-lg select-none">
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                  Posts
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                </div>
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                  Replies
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                </div>
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                  Media
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                </div>
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                  Likes
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                </div>
+              </div>
 
-              <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber2]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
-              <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber2]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
-              <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber2]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
 
+              {/* Changeable UI*/}
+              <div className="flex w-full h-screen" >
+                Hello
+
+              </div>
               
             </div>
 
@@ -95,9 +133,39 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">Hey</div>
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-600 bg-opacity-65"></div>
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-700 bg-opacity-65"></div>
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[300px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">
+
+
+            </div>
+
+            {/* Trending Componenet */}
+            <div className="flex flex-col hidden md:block w-[70%] min-w-[200px] min-h-[350px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden text-white">
+
+              <div className="flex w-full h-[30%] max-h-[100px] bg-black text-xl items-center px-2">
+                Trending
+              </div>
+
+              <div className="w-full h-[55%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
+                <div className= "flex flex-col truncate">
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2 "># H.A.N.D</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># HollowZERO</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># 404Event</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># BoxGalaxy</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># EriduForYou</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># Ehn-a-Nu</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># ChatisThisREAL?</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># GoldenBangboo</div>
+                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># Vision</div>
+                </div>
+              </div>
+
+              <div className="flex w-full h-[30%] bg-black text-xl justify-end  pt-5 px-10 ">
+                {"View More >"}
+              </div>
+
+            </div>
+
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[300px] rounded-3xl p-6 bg-stone-700 bg-opacity-65"></div>
 
           </div>
 

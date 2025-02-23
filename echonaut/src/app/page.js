@@ -95,8 +95,38 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">Hey</div>
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-600 bg-opacity-65"></div>
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">
+
+
+            </div>
+
+            <div className="flex flex-col hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden text-white">
+
+              <div className="flex w-full h-[30%] bg-black text-xl items-center px-2">
+                Trending
+              </div>
+
+              {/* Trending Componenet */}
+              <div className="w-full h-[55%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
+                <div className= "flex flex-col ">
+                  <div className=" w-full h-[60px] p-4"># H.A.N.D</div>
+                  <div className=" w-full h-[60px] p-4"># HollowZERO</div>
+                  <div className="w-full h-[60px] p-4"># 404Event</div>
+                  <div className="w-full h-[60px] p-4"># BoxGalaxy</div>
+                  <div className="w-full h-[60px] p-4"># EriduForYou</div>
+                  <div className="w-full h-[60px] p-4"># Ehn-a-Nu</div>
+                  <div className="w-full h-[60px] p-4"># ChatisThisREAL?</div>
+                  <div className="w-full h-[60px] p-4"># GoldenBangboo</div>
+                  <div className="w-full h-[60px] p-4"># Vision</div>
+                </div>
+              </div>
+
+              <div className="flex w-full h-full bg-black text-xl justify-end px-10 py-3">
+                {"View More >"}
+              </div>
+
+            </div>
+
             <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-700 bg-opacity-65"></div>
 
           </div>
