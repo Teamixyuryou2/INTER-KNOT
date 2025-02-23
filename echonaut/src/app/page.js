@@ -21,6 +21,7 @@ export default function Home() {
       <div className="fixed relative flex flex-col h-full w-[200px] lg:min-w-[140px] lg:w-[17%] bg-stone-800">
         <Navbar/>
       </div>
+      
       <div className="flex flex-col w-full">
 
         {/* MainPage */}
@@ -100,28 +101,27 @@ export default function Home() {
 
             </div>
 
-            <div className="flex flex-col hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden text-white">
+            <div className="flex flex-col hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
 
-              <div className="flex w-full h-[30%] bg-black text-xl items-center px-2">
+              <div className="flex w-full h-[30%] bg-black text-white text-xl items-center px-2">
                 Trending
               </div>
 
-              {/* Trending Componenet */}
               <div className="w-full h-[55%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
                 <div className= "flex flex-col ">
-                  <div className=" w-full h-[60px] p-4"># H.A.N.D</div>
-                  <div className=" w-full h-[60px] p-4"># HollowZERO</div>
-                  <div className="w-full h-[60px] p-4"># 404Event</div>
-                  <div className="w-full h-[60px] p-4"># BoxGalaxy</div>
-                  <div className="w-full h-[60px] p-4"># EriduForYou</div>
-                  <div className="w-full h-[60px] p-4"># Ehn-a-Nu</div>
-                  <div className="w-full h-[60px] p-4"># ChatisThisREAL?</div>
-                  <div className="w-full h-[60px] p-4"># GoldenBangboo</div>
-                  <div className="w-full h-[60px] p-4"># Vision</div>
+                  <div className="bg-stone-500 w-full h-[60px] p-4"># H.A.N.D</div>
+                  <div className="bg-stone-400 w-full h-[60px] p-4"># HollowZERO</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4"># 404Event</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4"># BoxGalaxy</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4"># EriduForYou</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4"># Ehn-a-Nu</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4"># ChatisThisREAL?</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4"># GoldenBangboo</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4"># Vision</div>
                 </div>
               </div>
 
-              <div className="flex w-full h-full bg-black text-xl justify-end px-10 py-3">
+              <div className="flex w-full h-full bg-black text-white text-xl justify-end px-10 py-3">
                 {"View More >"}
               </div>
 
