@@ -4,6 +4,7 @@ import Feed from "./components/feed";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../public/assets/users/userdata.json'
+import Weather from "./components/weather";
 
 export default function Home() {
 
@@ -128,7 +129,9 @@ export default function Home() {
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-700 bg-opacity-65"></div>
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] h-[500px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
+              <Weather/>
+            </div>
 
           </div>
 
