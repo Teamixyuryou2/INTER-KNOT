@@ -29,7 +29,7 @@ export default function Home() {
 
           {/* Personal */}
 
-          <div className="flex flex-col h-full gap-5 items-end lg:w-1/3 max-w-[600px] text-black bg-opacity-65 md:pr-4">
+          <div className="flex flex-col h-full gap-5 items-end lg:w-1/3 max-w-[600px] text-black bg-opacity-65 md:pr-6">
 
             <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl bg-stone-500  bg-opacity-65 overflow-hidden">
 
@@ -86,28 +86,29 @@ export default function Home() {
 
           {/* For you */}
           
-          <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start  max-w-[600px] lg:w-1/3 text-black pl-4 opacity-85">
+          <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start max-w-[600px] lg:w-1/3 text-black pl-6 opacity-85">
 
             {/*Search*/}
-            <div className="flex h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-60 hidden md:block">
+            <div className="flex h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-70 hidden md:block">
               <div className="flex flex-row h-[40px] w-full opacity-[50%] focus:opacity-[100%] bg-stone-200 rounded-3xl justify-center items-center px-2">
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="w-[40px] h-[40px] " />
                 <input type="text" className="bg-transparent h-[30px] w-full border-none focus:outline-none text-white invert" placeholder="Search . . ."/>
               </div>
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">
+            {/* <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">
 
+            </div> */}
 
-            </div>
+            <div className="flex-col hidden md:block w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
 
-            <div className="flex flex-col hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
-
-              <div className="flex w-full h-[30%] bg-black text-white text-xl items-center px-2">
+              <div className="flex w-full h-[17%] bg-black text-white text-xl items-center px-2">
+                <h1 className="ml-5">
                 Trending
+                </h1>
               </div>
 
-              <div className="w-full h-[55%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
+              <div className="w-full h-[68%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
                 <div className= "flex flex-col ">
                   <div className="bg-stone-500 w-full h-[60px] p-4"># H.A.N.D</div>
                   <div className="bg-stone-400 w-full h-[60px] p-4"># HollowZERO</div>
@@ -121,7 +122,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex w-full h-full bg-black text-white text-xl justify-end px-10 py-3">
+              <div className="flex w-full h-[15%] bg-black text-white text-xl justify-end px-10 py-3">
                 {"View More >"}
               </div>
 
