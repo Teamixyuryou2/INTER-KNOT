@@ -39,7 +39,7 @@ export default function Weather(){
             <div id="temperature" className="flex text-5xl xl:text-[70px] justify-center p-0 xl:p-1">
                 69°F    
             </div>
-            <div id="city-name" className="text-xl xl:text-3xl p-1">New Eridu</div>
+            <div id="city-name" className="text-xl xl:text-3xl p-1">{getWeatherData.coord}</div>
             <div id="date-time" className="text-lg xl:text-xl p-2">06:09 - Monday June 9</div>
             <div className="text-lg xl:text-xl">Ether particle concentration: 11%</div>
         </div>
