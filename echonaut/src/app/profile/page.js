@@ -26,32 +26,111 @@ export default function Home() {
         {/* MainPage */}
         <div className="flex flex-row w-full h-full py-10 justify-center text-xl font-bold ">
 
-          {/* Personal */}
+        <div className="flex flex-col h-full gap-5 items-end lg:w-1/3 max-w-[600px] text-black bg-opacity-65 md:pr-6">
 
-          <div className="flex flex-col h-full gap-5 items-end lg:w-1/3 max-w-[600px] text-black bg-opacity-65 md:pr-4">
 
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl bg-stone-500  bg-opacity-65 overflow-hidden">
+        {/* Profile Box */}
+        <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-stone-500  bg-opacity-65 overflow-hidden">
 
-              <div className="flex w-full h-1/3 min-h-[50px] px-4 items-center bg-opacity-65">
-                {/*Profile Picture */}
-                <div className= "rounded-full bg-stone-200 w-[50px] h-[50px] max-w-[100px] max-h-[100px] min-w-[50px] min-w-[50px] bg-opacity-65">
+          <div className="flex w-full h-1/3 min-h-[50px] px-4 items-center bg-opacity-65">
+            {/*Profile Picture */}
+            <div className= "rounded-full bg-stone-200 w-[50px] h-[50px] max-w-[100px] max-h-[100px] min-w-[50px] min-w-[50px] bg-opacity-65">
 
-                </div>
-                {/*Name*/}
-                <div className= "rounded-full bg-stone-200 w-[200px] h-[40px] min-w-[50px] min-w-[50px] mx-2 bg-opacity-65">
+            </div>
+            {/*Name*/}
+            <div className= "rounded-full bg-stone-200 w-[200px] h-[40px] min-w-[50px] min-w-[50px] mx-2 bg-opacity-65">
 
+            </div>
+          </div>
+          <div className="h-full w-full  p-5 text-pretty text-balance bg-opacity-65">
+            New Eridu hotest topic in today !!!
+          </div>
+
+        </div>
+
+        {/* Chatbox */}
+        <div className="flex flex-col hidden lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl bg-opacity-65 bg-stone-700 text-xs overflow-hidden">
+
+          {/* Chatbox header */}
+          <div className= "flex flex-row p-3 gap-4 items-center h-[20%] text-white">
+            <div className = "flex bg-white rounded-full h-[50px] w-[50px] items-center justify-center text-black">
+              S
+            </div>
+            <div className="flex flex-col bg-stone-900 rounded-3xl py-2 px-5">
+              <div>
+                Name
+              </div>
+              <div>
+                @ Handle
+              </div>
+            </div>
+          </div>
+
+          {/* Chatbox Body*/}
+          <div className="flex h-[60%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
+            <div className="flex flex-col w-full ">
+
+              {/*Text Bubbles Layout USER*/}
+              <div className="flex flex-col p-2 items-end">
+                <div className="bg-pink-600 p-4 rounded-3xl"> 
+                  hey where r u at rn
                 </div>
               </div>
-              <div className="h-full w-full  p-5 text-pretty text-balance bg-opacity-65">
-                New Eridu hotest topic in today !!!
+              {/*Text Bubbles Layout FRIEND*/}
+              <div className="flex flex-col p-2 items-start">
+                <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                  I'm outside rn
+                </div>
               </div>
+              {/*Text Bubbles Layout USER*/}
+              <div className="flex flex-col p-2 items-end">
+                <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                  doin what?
+                </div>
+              </div>
+              {/*Text Bubbles Layout FRIEND*/}
+              <div className="flex flex-col p-2 items-start">
+                <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                  Checking out the new snack shop!
+                </div>
+              </div>
+              {/*Text Bubbles Layout USER*/}
+              <div className="flex flex-col p-2 items-end">
+                <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                  thers a new snack shop?
+                </div>
+              </div>
+              {/*Text Bubbles Layout FRIEND*/}
+              <div className="flex flex-col p-2 items-start">
+                <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                  Yeah! You should come check it out!
+                </div>
+              </div>                  
+              
 
             </div>
 
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-opacity-65 bg-stone-600">Guys is it true that there is a golden bangboo sighting?</div>
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-opacity-65 bg-stone-700">Hello</div>
+          </div>
+
+          <div className= "flex flex-row h-[20%] min-h-[100px] w-full bg-stone-900 p-2 gap-5 items-center">
+
+            
+            {/* Chatbox Input */}
+            <div className="p-1 bg-white rounded-2xl w-3/4 max-h-[100px] break-words">
+              <textarea className="w-full h-[40px] p-2 outline-0 resize-none">
+              </textarea>
+            </div>
+            {/* Chatbox send */}
+            <div className="flex bg-white justify-center items-center rounded-full w-[50px] h-[50px] select-none"> 
+              Send
+            </div>
 
           </div>
+
+        </div>
+
+        </div>
+
 
           {/* Profile */}
 
@@ -133,33 +212,30 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[300px] rounded-3xl p-6 bg-stone-500 bg-opacity-65">
-
-
-            </div>
-
             {/* Trending Componenet */}
-            <div className="flex flex-col hidden md:block w-[70%] min-w-[200px] min-h-[350px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden text-white">
+            <div className="flex-col hidden md:block w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
 
-              <div className="flex w-full h-[30%] max-h-[100px] bg-black text-xl items-center px-2">
+              <div className="flex w-full h-[17%] bg-black text-white text-xl items-center px-2">
+                <h1 className="ml-5">
                 Trending
+                </h1>
               </div>
 
-              <div className="w-full h-[55%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
-                <div className= "flex flex-col truncate">
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2 "># H.A.N.D</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># HollowZERO</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># 404Event</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># BoxGalaxy</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># EriduForYou</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># Ehn-a-Nu</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># ChatisThisREAL?</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># GoldenBangboo</div>
-                  <div className="w-full h-[60px] pl-4 py-4 border-t-2"># Vision</div>
+              <div className="w-full h-[68%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
+                <div className= "flex flex-col ">
+                  <div className="bg-stone-500 w-full h-[60px] p-4"># H.A.N.D</div>
+                  <div className="bg-stone-400 w-full h-[60px] p-4"># HollowZERO</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4"># 404Event</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4"># BoxGalaxy</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4"># EriduForYou</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4"># Ehn-a-Nu</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4"># ChatisThisREAL?</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4"># GoldenBangboo</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4"># Vision</div>
                 </div>
               </div>
 
-              <div className="flex w-full h-[30%] bg-black text-xl justify-end  pt-5 px-10 ">
+              <div className="flex w-full h-[15%] bg-black text-white text-xl justify-end px-10 py-3">
                 {"View More >"}
               </div>
 
