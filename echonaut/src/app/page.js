@@ -31,7 +31,9 @@ export default function Home() {
 
           <div className="flex flex-col h-full gap-5 items-end lg:w-1/3 max-w-[600px] text-black bg-opacity-65 md:pr-6">
 
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl bg-stone-500  bg-opacity-65 overflow-hidden">
+
+            {/* Profile Box */}
+            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-stone-500  bg-opacity-65 overflow-hidden">
 
               <div className="flex w-full h-1/3 min-h-[50px] px-4 items-center bg-opacity-65">
                 {/*Profile Picture */}
@@ -49,8 +51,86 @@ export default function Home() {
 
             </div>
 
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-opacity-65 bg-stone-600">Guys is it true that there is a golden bangboo sighting?</div>
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[500px] rounded-3xl p-6 bg-opacity-65 bg-stone-700">Hello</div>
+            {/* Chatbox */}
+            <div className="flex flex-col hidden lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl bg-opacity-65 bg-stone-700 text-xs overflow-hidden">
+
+              {/* Chatbox header */}
+              <div className= "flex flex-row p-3 gap-4 items-center h-[20%] text-white">
+                <div className = "flex bg-white rounded-full h-[50px] w-[50px] items-center justify-center text-black">
+                  S
+                </div>
+                <div className="flex flex-col bg-stone-900 rounded-3xl py-2 px-5">
+                  <div>
+                    Name
+                  </div>
+                  <div>
+                    @ Handle
+                  </div>
+                </div>
+              </div>
+
+              {/* Chatbox Body*/}
+              <div className="flex h-[60%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
+                <div className="flex flex-col w-full ">
+
+                  {/*Text Bubbles Layout USER*/}
+                  <div className="flex flex-col p-2 items-end">
+                    <div className="bg-pink-600 p-4 rounded-3xl"> 
+                      hey where r u at rn
+                    </div>
+                  </div>
+                  {/*Text Bubbles Layout FRIEND*/}
+                  <div className="flex flex-col p-2 items-start">
+                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                      I'm outside rn
+                    </div>
+                  </div>
+                  {/*Text Bubbles Layout USER*/}
+                  <div className="flex flex-col p-2 items-end">
+                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                      doin what?
+                    </div>
+                  </div>
+                  {/*Text Bubbles Layout FRIEND*/}
+                  <div className="flex flex-col p-2 items-start">
+                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                      Checking out the new snack shop!
+                    </div>
+                  </div>
+                  {/*Text Bubbles Layout USER*/}
+                  <div className="flex flex-col p-2 items-end">
+                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                      thers a new snack shop?
+                    </div>
+                  </div>
+                  {/*Text Bubbles Layout FRIEND*/}
+                  <div className="flex flex-col p-2 items-start">
+                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                      Yeah! You should come check it out!
+                    </div>
+                  </div>                  
+                  
+
+                </div>
+
+              </div>
+
+              <div className= "flex flex-row h-[20%] min-h-[100px] w-full bg-stone-900 p-2 gap-5 items-center">
+
+                
+                {/* Chatbox Input */}
+                <div className="p-1 bg-white rounded-2xl w-3/4 max-h-[100px] break-words">
+                  <textarea className="w-full h-[40px] p-2 outline-0 resize-none">
+                  </textarea>
+                </div>
+                {/* Chatbox send */}
+                <div className="flex bg-white justify-center items-center rounded-full w-[50px] h-[50px] select-none"> 
+                  Send
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
