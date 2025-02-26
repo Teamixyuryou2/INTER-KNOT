@@ -49,7 +49,7 @@ export default function Weather(){
     }, []);
 
     if(!currWeather || !currWeather.main){
-        return <div className="flex justify-center items-center text-center text-white text-xl">Loading Weather Data...</div>
+        return <div className="flex justify-center items-center h-full w-full text-center text-white text-xl">Loading Weather Data...</div>
     }
 
     const tempRounded = currWeather.main ? Math.round(currWeather.main.temp) : null;

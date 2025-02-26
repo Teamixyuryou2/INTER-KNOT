@@ -44,7 +44,7 @@ export default function Home() {
             </div>
           </div>
           <div className="h-full w-full  p-5 text-pretty text-balance bg-opacity-65">
-            New Eridu hotest topic in today !!!
+            New Eridu hottest topic in today !!!
           </div>
 
         </div>
@@ -71,43 +71,36 @@ export default function Home() {
           <div className="flex h-[60%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
             <div className="flex flex-col w-full ">
 
-              {/*Text Bubbles Layout USER*/}
-              <div className="flex flex-col p-2 items-end">
-                <div className="bg-pink-600 p-4 rounded-3xl"> 
-                  hey where r u at rn
-                </div>
-              </div>
               {/*Text Bubbles Layout FRIEND*/}
               <div className="flex flex-col p-2 items-start">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  I'm outside rn
+                  Ellen! Where are you?
                 </div>
               </div>
               {/*Text Bubbles Layout USER*/}
               <div className="flex flex-col p-2 items-end">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  doin what?
+                  Zzzz...
                 </div>
               </div>
               {/*Text Bubbles Layout FRIEND*/}
               <div className="flex flex-col p-2 items-start">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  Checking out the new snack shop!
+                  Come check out the new snack shop!
                 </div>
               </div>
               {/*Text Bubbles Layout USER*/}
               <div className="flex flex-col p-2 items-end">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  thers a new snack shop?
+                  theres a new snack shop?
                 </div>
               </div>
               {/*Text Bubbles Layout FRIEND*/}
               <div className="flex flex-col p-2 items-start">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  Yeah! You should come check it out!
+                  Yeah! Let's go!
                 </div>
               </div>                  
-              
 
             </div>
 

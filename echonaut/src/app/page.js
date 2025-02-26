@@ -19,7 +19,7 @@ export default function Home() {
     <div className="flex flex-row bg-[url(../../public/assets/Ellen/Mindscape_Ellen_Joe_Partial.png)] bg-no-repeat bg-cover bg-[right] bg-stone-900 h-screen min-w-[400px] overflow-hidden">
 
       {/* Navbar */}
-      <div className="fixed relative flex flex-col h-full w-[200px] lg:min-w-[140px] lg:w-[17%] bg-stone-800">
+      <div className="relative flex flex-col h-full w-[200px] lg:min-w-[140px] lg:w-[17%] bg-stone-800">
         <Navbar/>
       </div>
       
@@ -56,72 +56,70 @@ export default function Home() {
             <div className="flex flex-col hidden lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl bg-opacity-65 bg-stone-700 text-xs overflow-hidden">
 
               {/* Chatbox header */}
-              <div className= "flex flex-row p-3 gap-4 items-center h-[20%] text-white">
+              <div className= "flex flex-row p-3 gap-4 items-center h-[15%] bg-stone-900 text-white">
                 <div className = "flex bg-white rounded-full h-[50px] w-[50px] items-center justify-center text-black">
                   S
                 </div>
-                <div className="flex flex-col bg-stone-900 rounded-3xl py-2 px-5">
-                  <div>
-                    Name
+                <div className="flex flex-col bg-stone-800 rounded-3xl py-2 px-5">
+                  <div className="text-lg">
+                    Monna
                   </div>
                   <div>
-                    @ Handle
+                    @handle
                   </div>
                 </div>
               </div>
 
               {/* Chatbox Body*/}
-              <div className="flex h-[60%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
+              <div className="flex h-[65%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
                 <div className="flex flex-col w-full ">
 
-                  {/*Text Bubbles Layout USER*/}
-                  <div className="flex flex-col p-2 items-end">
-                    <div className="bg-pink-600 p-4 rounded-3xl"> 
-                      hey where r u at rn
-                    </div>
+                {/*Text Bubbles Layout FRIEND*/}
+                <div className="flex flex-col p-2 items-start">
+                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
+                    Ellen! Where are you?
                   </div>
-                  {/*Text Bubbles Layout FRIEND*/}
-                  <div className="flex flex-col p-2 items-start">
-                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                      I'm outside rn
-                    </div>
-                  </div>
-                  {/*Text Bubbles Layout USER*/}
-                  <div className="flex flex-col p-2 items-end">
-                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                      doin what?
-                    </div>
-                  </div>
-                  {/*Text Bubbles Layout FRIEND*/}
-                  <div className="flex flex-col p-2 items-start">
-                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                      Checking out the new snack shop!
-                    </div>
-                  </div>
-                  {/*Text Bubbles Layout USER*/}
-                  <div className="flex flex-col p-2 items-end">
-                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                      thers a new snack shop?
-                    </div>
-                  </div>
-                  {/*Text Bubbles Layout FRIEND*/}
-                  <div className="flex flex-col p-2 items-start">
-                    <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                      Yeah! You should come check it out!
-                    </div>
-                  </div>                  
-                  
-
                 </div>
-
+                {/*Text Bubbles Layout USER*/}
+                <div className="flex flex-col p-2 items-end">
+                  <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                    Zzzz...
+                  </div>
+                </div>
+                {/*Text Bubbles Layout FRIEND*/}
+                <div className="flex flex-col p-2 items-start">
+                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
+                    Hellooooo? Earth to Ellen?
+                  </div>
+                </div>
+                {/*Text Bubbles Layout FRIEND*/}
+                <div className="flex flex-col p-2 items-start">
+                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
+                    Come check out the new snack shop!
+                  </div>
+                </div>
+                {/*Text Bubbles Layout USER*/}
+                <div className="flex flex-col p-2 items-end">
+                  <div className=" bg-pink-600 p-4 rounded-3xl"> 
+                    theres a new snack shop?
+                  </div>
+                </div>
+                {/*Text Bubbles Layout FRIEND*/}
+                <div className="flex flex-col p-2 items-start">
+                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
+                    Yeah! Let's go!
+                  </div>
+                </div>  
+                
+                </div>
               </div>
 
               <div className= "flex flex-row h-[20%] min-h-[100px] w-full bg-stone-900 p-2 gap-5 items-center">
 
                 
                 {/* Chatbox Input */}
-                <div className="p-1 bg-white rounded-2xl w-3/4 max-h-[100px] break-words">
-                  <textarea className="w-full h-[40px] p-2 outline-0 resize-none">
+                <div className="p-1 bg-white ml-2 rounded-3xl w-3/4 max-h-[100px] break-words">
+                  <textarea className="w-full h-[40px] rounded-3xl text-lg p-2 outline-0 resize-none scrollbar-hidden scroll-smooth">
                   </textarea>
                 </div>
                 {/* Chatbox send */}
@@ -183,7 +181,7 @@ export default function Home() {
 
             <div className="flex-col hidden md:block w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
 
-              <div className="flex w-full h-[17%] bg-black text-white text-xl items-center px-2">
+              <div className="flex w-full h-[17%] bg-black text-white text-2xl tracking-wide items-center px-2">
                 <h1 className="ml-5">
                 Trending
                 </h1>
@@ -203,7 +201,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex w-full h-[15%] bg-black text-white text-xl justify-end px-10 py-3">
+              <div className="flex w-full h-[15%] bg-black text-white text-lg justify-end items-center px-10 py-3">
                 {"View More >"}
               </div>
 
