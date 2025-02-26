@@ -170,8 +170,8 @@ export default function Home() {
           <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start max-w-[600px] lg:w-1/3 text-black pl-6 opacity-85">
 
             {/*Search*/}
-            <div className="flex h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-70 hidden md:block">
-              <div className="flex flex-row h-[40px] w-full opacity-[50%] focus:opacity-[100%] bg-stone-200 rounded-3xl justify-center items-center px-2">
+            <div className="h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-70 focus:opacity-100 hidden md:block">
+              <div className="flex flex-row h-[40px] w-full opacity-[60%] focus:opacity-[100%] bg-stone-200 rounded-3xl justify-center items-center px-2">
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="w-[40px] h-[40px] " />
                 <input type="text" className="bg-transparent h-[30px] w-full border-none focus:outline-none text-white invert" placeholder="Search . . ."/>
               </div>
@@ -209,7 +209,7 @@ export default function Home() {
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] h-[500px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] h-[550px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
               <Weather/>
             </div>
 
