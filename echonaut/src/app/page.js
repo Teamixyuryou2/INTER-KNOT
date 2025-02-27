@@ -83,7 +83,7 @@ export default function Home() {
                 {/*Text Bubbles Layout USER*/}
                 <div className="flex flex-col p-2 items-end">
                   <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                    Zzzz...
+                    <Image height={80} width={80} alt="ellen sleep" style={{objectFit: "contain"}} src={"/assets/Ellen/Zenless_Zone_Zero_Ridu_Stroll_Sticker_Pack_1_Ellen.png"} />
                   </div>
                 </div>
                 {/*Text Bubbles Layout FRIEND*/}
