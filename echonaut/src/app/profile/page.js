@@ -5,10 +5,11 @@ import Feed from "../components/feed";
 import Comment from "../components/comment";
 import Chatbox from "../components/chatbox";
 import Notifications from "../components/notifications";
+import Loading from "./loading.js"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../../public/assets/users/userdata.json'
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import Weather from "../components/weather";
 
 export default function Home() {
@@ -20,7 +21,23 @@ export default function Home() {
   const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
 
   const [activeTab, setActiveTab] = useState("posts")
+  const [loading, setLoading] = useState(true)   //Loading Switch
+  const [fadeOut, setFadeOut] = useState(false);  //Loading Fade
+  
+  //Loading Timer
+  useEffect(() => {
 
+    const timer = setTimeout(() => {
+      setFadeOut(true); // Trigger fade-out before hiding
+
+      setTimeout(() => {
+        setLoading(false); // Hide after fade-out
+      }, 400); // Make sure fade-out lasts for 1 second (1000ms)
+
+    }, 200); // Start fading out after 200ms
+
+    return () => clearTimeout(timer);
+  }, []);
 
   function renderComponent(){
     switch(activeTab){
@@ -116,7 +133,11 @@ export default function Home() {
         <Navbar/>
       </div>
 
+
       <div className="flex flex-col w-full">
+
+        {/* Loading Screen */}
+        {loading && (<div className={`fixed w-full h-full z-50  ${fadeOut ? "opacity-0" : "opacity-100"} transition-opacity duration-1000 overflow-hidden`}> <Loading /> </div> )} 
 
         {/* MainPage */}
         <div className="flex flex-row w-full h-full py-10 justify-center text-xl font-bold ">
@@ -346,5 +367,6 @@ export default function Home() {
       </div> */}
 
     </div>
+    
   );
 }

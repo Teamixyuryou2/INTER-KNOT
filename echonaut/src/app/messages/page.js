@@ -3,7 +3,9 @@ import Image from "next/image";
 import Navbar from "../components/navbar";
 import Chatbox from "../components/chatbox";
 import Friendlist from "../components/friendlist";
+import Loading from "./loading"
 import userData from '../../../public/assets/users/userdata.json'
+import {useState, useEffect} from 'react';
 
 export default function Home() {
 
@@ -13,6 +15,24 @@ export default function Home() {
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
 
+  const [loading, setLoading] = useState(true)   //Loading Switch
+  const [fadeOut, setFadeOut] = useState(false);  //Loading Fade
+    
+  //Loading Timer
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setFadeOut(true); // Trigger fade-out before hiding
+
+      setTimeout(() => {
+        setLoading(false); // Hide after fade-out
+      }, 400); // Make sure fade-out lasts for 400ms
+
+    }, 200); // Start fading out after 200ms
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex flex-row bg-[url(../../public/assets/Ellen/Mindscape_Ellen_Joe_Partial.png)] bg-no-repeat bg-cover bg-[right] bg-stone-900 h-screen min-w-[400px] overflow-hidden">
 
@@ -21,6 +41,10 @@ export default function Home() {
         <Navbar/>
       </div>
       <div className="flex flex-col w-full">
+
+        {/* Loading Screen */}
+        {loading && (<div className={`fixed w-full h-full z-50  ${fadeOut ? "opacity-0" : "opacity-100"} transition-opacity duration-1000 overflow-hidden`}> <Loading /> </div> )} 
+
         {/* Message Page Container */}
         <div className="flex flex-row h-full w-full justify-center items-center">
 
