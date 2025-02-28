@@ -10,7 +10,7 @@ export default function Feed({ name, image , message, profilepicture }){
                     <div className="flex w-[60px] h-[60px] rounded-full justify-center items-center border-2 ">
                         <img src={ profilepicture } alt="" className="w-auto h-auto" />
                     </div>
-                    <div className="flex bg-stone-900 mb-3 w-[80%] h-[40px] rounded-full items-center px-5">
+                    <div className="flex bg-stone-900 mb-3 w-[70%] h-[40px] rounded-full items-center px-5">
                         { name }
                     </div>
                     <div className="flex mb-6 mx-1 hover:cursor-pointer">
