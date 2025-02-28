@@ -5,6 +5,7 @@ import { Navbutton } from './navbutton';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import userSettings from '../../../public/assets/presets/presets.json';
+import Friendlist from './friendlist';
 
 
 export default function Navbar(){
@@ -83,6 +84,12 @@ export default function Navbar(){
               <div className="">Post</div> 
             </div>
           </button>
+        </div>
+
+        <div className="hidden lg:flex justify-center mt-2">
+          <div className="flex justify-center items-center rounded-xl overflow-hidden w-[90%] h-[80%]">
+            <Friendlist className="overflow-scroll"/>
+          </div>
         </div>
       </nav>
     );
