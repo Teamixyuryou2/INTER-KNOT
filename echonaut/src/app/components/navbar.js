@@ -62,7 +62,7 @@ export default function Navbar(){
           </div>
           
           <div className="justify-center flex w-full">
-            <Navbutton label="Messages" graphic={faEnvelope} linkTo={"/"} />
+            <Navbutton label="Messages" graphic={faEnvelope} linkTo={"/messages"} />
           </div>
 
           <div className="justify-center flex w-full">

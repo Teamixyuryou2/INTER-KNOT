@@ -1,6 +1,8 @@
 'use client'
 import Image from "next/image";
 import Navbar from "../components/navbar";
+import Chatbox from "../components/chatbox";
+import Friendlist from "../components/friendlist";
 import userData from '../../../public/assets/users/userdata.json'
 
 export default function Home() {
@@ -24,9 +26,15 @@ export default function Home() {
 
           <div className="flex flex-row  h-3/4 w-full gap-1 justify-center items-center">
 
-            <div className="flex flex-col bg-opacity-60 bg-stone-600 h-full hidden sm:block sm:w-1/5 md:min-w-[150px] lg:w-1/5 rounded-3xl p-4 justify-center items-center"> Friend </div>
-            <div className="flex bg-stone-600 h-full w-[90%] bg-opacity-60 sm:min-w-[400px] sm:w-3/5 lg:w-2/5 rounded-3xl p-4 justify-center items-center">Chat Box</div>
-            <div className="flex flex-col bg-stone-600 h-full bg-opacity-60 hidden lg:block lg:w-1/5 rounded-3xl p-4 justify-center items-center"> Whatever box</div>
+            <div className="flex flex-col bg-opacity-80 bg-stone-900 h-full hidden sm:block sm:w-1/5 md:min-w-[150px] lg:w-1/5 rounded-3xl justify-center items-center overflow-hidden border-2 border-black"> 
+              <Friendlist/> 
+            </div>
+            <div className="flex bg-opacity-80 bg-stone-900 h-full w-[90%] sm:min-w-[400px] sm:w-3/5 lg:w-2/5 rounded-3xl justify-center items-center overflow-hidden border-2 border-black text-black">
+              <Chatbox />
+            </div>
+            <div className="flex flex-col bg-opacity-80 bg-stone-900 h-full hidden lg:block lg:w-1/5 rounded-3xl p-4 justify-center items-center border-2 border-black">
+              Whatever box
+            </div>
 
           </div>
 

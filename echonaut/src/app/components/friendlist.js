@@ -17,7 +17,7 @@ export default function Friendlist(){
           <a href="https://carlfeng.netlify.app/" className="w-full flex p-3 rounded-lg hover:bg-stone-700 hover:cursor-pointer transition-all duration-150 ease-in">
             <FontAwesomeIcon icon={faCircle} className="text-green-500 p-1 mr-1 scale-75"/> Carl Feng
           </a>
-          <a href="" className="w-full flex p-3 rounded-lg hover:bg-stone-700 hover:cursor-pointer transition-all duration-150 ease-in">
+          <a href="https://yuyou-liu-workshop.vercel.app/" className="w-full flex p-3 rounded-lg hover:bg-stone-700 hover:cursor-pointer transition-all duration-150 ease-in">
             <FontAwesomeIcon icon={faCircle} className="text-green-500 p-1 mr-1 scale-75"/> Yuyou Liu
           </a>
           <div className="w-full flex p-3 rounded-lg hover:bg-stone-700 hover:cursor-pointer transition-all duration-150 ease-in">
