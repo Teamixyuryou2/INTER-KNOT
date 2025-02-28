@@ -14,16 +14,16 @@ export default function Notifications(){
 
       <div className="w-full h-[81%] overflow-y-scroll overflow-x-hidden scrollbar-hidden">
         <div className= "flex flex-col text-white text-lg">
-          <div className="w-full flex p-4 hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
+          <div className="w-full flex p-4 border-b hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
             <FontAwesomeIcon icon={faHeart} className="text-red-500 p-1 mr-1"/> Monna liked your post
           </div>
-          <div className="w-full flex p-4 hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
+          <div className="w-full flex p-4 border-b hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
             <FontAwesomeIcon icon={faRetweet} className="text-green-500 p-1 mr-1"/> Monna shared your post
           </div>
-          <div className="w-full flex p-4 hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
+          <div className="w-full flex p-4 border-b hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
             <FontAwesomeIcon icon={faHeart} className="text-red-500 p-1 mr-1"/> Ruby liked your post
           </div>
-          <div className="w-full flex p-4 hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
+          <div className="w-full flex p-4 border-b hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">
             <FontAwesomeIcon icon={faHeart} className="text-red-500 p-1 mr-1"/> Lynn liked your post
           </div>
           <div className="w-full flex p-4 hover:bg-black hover:cursor-pointer transition-all duration-150 ease-in">

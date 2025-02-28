@@ -6,15 +6,15 @@ export default function Chatbox(){
 
             {/* Header */}
             <div className= "flex flex-row p-3 gap-4 items-center h-[15%] bg-stone-900 text-white">
-                <div className = "flex bg-white rounded-full h-[50px] w-[50px] items-center justify-center text-black">
-                    S
+                <div className = "flex bg-white border-white border rounded-full ml-3 h-[50px] w-[50px] items-center justify-center text-black">
+                    <Image height={50} width={50} alt="ruby pfp" style={{objectFit: "contain"}} src={"/assets/Ellen/ruby.png"} className="rounded-full"/>
                 </div>
-                <div className="flex flex-col bg-stone-800 rounded-3xl py-2 px-5">
+                <div className="flex flex-col bg-transparent rounded-3xl">
                     <div className="text-lg">
-                        Monna
+                        Ruby
                     </div>
                     <div>
-                        @handle
+                        @rubysapphire
                     </div>
                 </div>
             </div>
@@ -69,12 +69,12 @@ export default function Chatbox(){
                 </div>
             </div>
 
-            <div className= "flex flex-row h-[20%] min-h-[100px] w-full bg-stone-900 p-2 gap-5 items-center">
+            <div className= "flex flex-row h-[20%] min-h-[90px] w-full bg-stone-900 p-2 gap-5 items-center">
 
                 
                 {/* Chatbox Input */}
-                <div className="p-1 bg-white ml-2 rounded-3xl w-3/4 max-h-[100px] break-words">
-                    <textarea className="w-full h-[40px] rounded-3xl text-lg p-2 outline-0 resize-none scrollbar-hidden scroll-smooth">
+                <div className="flex p-0 bg-white ml-2 rounded-3xl overflow-hidden w-3/4 max-h-[100px] break-words">
+                    <textarea className="flex w-full h-[45px] rounded-3xl text-lg p-2 outline-0 resize-none scrollbar-hidden scroll-smooth">
                     </textarea>
                 </div>
                 {/* Chatbox send */}

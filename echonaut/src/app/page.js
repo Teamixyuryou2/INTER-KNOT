@@ -82,7 +82,7 @@ export default function Home() {
           <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start max-w-[600px] lg:w-1/3 text-black pl-6 opacity-85">
 
             {/*Search*/}
-            <div className="h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-70 focus:opacity-100 hidden md:block">
+            <div className="h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-80 hover:opacity-100 focus:opacity-100 hidden md:flex">
               <div className="flex flex-row h-[40px] w-full opacity-[60%] focus:opacity-[100%] bg-stone-200 rounded-3xl justify-center items-center px-2">
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="w-[40px] h-[40px] " />
                 <input type="text" className="bg-transparent h-[30px] w-full border-none focus:outline-none text-white invert" placeholder="Search . . ."/>
