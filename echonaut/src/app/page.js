@@ -7,6 +7,7 @@ import userData from '../../public/assets/users/userdata.json'
 import Weather from "./components/weather";
 import Chatbox from "./components/chatbox";
 import Notifications from "./components/notifications";
+import MusicPlayer from "./components/musicplayer";
 
 export default function Home() {
 
@@ -23,6 +24,10 @@ export default function Home() {
       {/* Navbar */}
       <div className="relative flex flex-col h-full w-[140px] lg:min-w-[140px] lg:w-[17%] bg-stone-800">
         <Navbar/>
+      </div>
+
+      <div className="">
+        <MusicPlayer/>
       </div>
       
       <div className="flex flex-col w-full">
