@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../public/assets/users/userdata.json'
 import Weather from "./components/weather";
+import Chatbox from "./components/chatbox";
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
     <div className="flex flex-row bg-[url(../../public/assets/Ellen/Mindscape_Ellen_Joe_Partial.png)] bg-no-repeat bg-cover bg-[right] bg-stone-900 h-screen min-w-[400px] overflow-hidden">
 
       {/* Navbar */}
-      <div className="relative flex flex-col h-full w-[200px] lg:min-w-[140px] lg:w-[17%] bg-stone-800">
+      <div className="relative flex flex-col h-full w-[140px] lg:min-w-[140px] lg:w-[17%] bg-stone-800">
         <Navbar/>
       </div>
       
@@ -53,82 +54,8 @@ export default function Home() {
             </div>
 
             {/* Chatbox */}
-            <div className="flex flex-col hidden lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl bg-opacity-65 bg-stone-700 text-xs overflow-hidden">
-
-              {/* Chatbox header */}
-              <div className= "flex flex-row p-3 gap-4 items-center h-[15%] bg-stone-900 text-white">
-                <div className = "flex bg-white rounded-full h-[50px] w-[50px] items-center justify-center text-black">
-                  S
-                </div>
-                <div className="flex flex-col bg-stone-800 rounded-3xl py-2 px-5">
-                  <div className="text-lg">
-                    Monna
-                  </div>
-                  <div>
-                    @handle
-                  </div>
-                </div>
-              </div>
-
-              {/* Chatbox Body*/}
-              <div className="flex h-[65%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
-                <div className="flex flex-col w-full ">
-
-                {/*Text Bubbles Layout FRIEND*/}
-                <div className="flex flex-col p-2 items-start">
-                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
-                    Ellen! Where are you?
-                  </div>
-                </div>
-                {/*Text Bubbles Layout USER*/}
-                <div className="flex flex-col p-2 items-end">
-                  <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                    <Image height={80} width={80} alt="ellen sleep" style={{objectFit: "contain"}} src={"/assets/Ellen/Zenless_Zone_Zero_Ridu_Stroll_Sticker_Pack_1_Ellen.png"} />
-                  </div>
-                </div>
-                {/*Text Bubbles Layout FRIEND*/}
-                <div className="flex flex-col p-2 items-start">
-                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
-                    Hellooooo? Earth to Ellen?
-                  </div>
-                </div>
-                {/*Text Bubbles Layout FRIEND*/}
-                <div className="flex flex-col p-2 items-start">
-                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
-                    Come check out the new snack shop!
-                  </div>
-                </div>
-                {/*Text Bubbles Layout USER*/}
-                <div className="flex flex-col p-2 items-end">
-                  <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                    theres a new snack shop?
-                  </div>
-                </div>
-                {/*Text Bubbles Layout FRIEND*/}
-                <div className="flex flex-col p-2 items-start">
-                  <div className=" bg-stone-900 text-white p-4 rounded-3xl"> 
-                    Yeah! Let's go!
-                  </div>
-                </div>  
-                
-                </div>
-              </div>
-
-              <div className= "flex flex-row h-[20%] min-h-[100px] w-full bg-stone-900 p-2 gap-5 items-center">
-
-                
-                {/* Chatbox Input */}
-                <div className="p-1 bg-white ml-2 rounded-3xl w-3/4 max-h-[100px] break-words">
-                  <textarea className="w-full h-[40px] rounded-3xl text-lg p-2 outline-0 resize-none scrollbar-hidden scroll-smooth">
-                  </textarea>
-                </div>
-                {/* Chatbox send */}
-                <div className="flex bg-white justify-center items-center rounded-full w-[50px] h-[50px] select-none"> 
-                  Send
-                </div>
-
-              </div>
-
+            <div className="hidden flex-col lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl overflow-hidden">
+              <Chatbox/>
             </div>
 
           </div>
@@ -207,7 +134,7 @@ export default function Home() {
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] h-[550px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[350px] h-[550px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
               <Weather/>
             </div>
 
