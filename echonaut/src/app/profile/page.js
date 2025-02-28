@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../../public/assets/users/userdata.json'
 import { useState } from 'react';
+import Weather from "../components/weather";
 
 export default function Home() {
 
@@ -161,43 +162,36 @@ export default function Home() {
           <div className="flex h-[60%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
             <div className="flex flex-col w-full ">
 
-              {/*Text Bubbles Layout USER*/}
-              <div className="flex flex-col p-2 items-end">
-                <div className="bg-pink-600 p-4 rounded-3xl"> 
-                  hey where r u at rn
-                </div>
-              </div>
               {/*Text Bubbles Layout FRIEND*/}
               <div className="flex flex-col p-2 items-start">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  I'm outside rn
+                  Ellen! Where are you?
                 </div>
               </div>
               {/*Text Bubbles Layout USER*/}
               <div className="flex flex-col p-2 items-end">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  doin what?
+                  Zzzz...
                 </div>
               </div>
               {/*Text Bubbles Layout FRIEND*/}
               <div className="flex flex-col p-2 items-start">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  Checking out the new snack shop!
+                  Come check out the new snack shop!
                 </div>
               </div>
               {/*Text Bubbles Layout USER*/}
               <div className="flex flex-col p-2 items-end">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  thers a new snack shop?
+                  theres a new snack shop?
                 </div>
               </div>
               {/*Text Bubbles Layout FRIEND*/}
               <div className="flex flex-col p-2 items-start">
                 <div className=" bg-pink-600 p-4 rounded-3xl"> 
-                  Yeah! You should come check it out!
+                  Yeah! Let's go!
                 </div>
               </div>                  
-              
 
             </div>
 
@@ -227,30 +221,32 @@ export default function Home() {
 
           <div className="flex flex-col h-screen min-w-[300px] md:min-w-[500px] w-[80%] max-w-[500px] lg:w-full items-center text-black overflow-y-scroll  md:pl-0 md:pr-0  lg:pr-0 md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
 
-            <div className="flex flex-col bg-stone-600 bg-opacity-60 w-full w-full my-5 items-center text-black">
+
+            <div className="flex flex-col bg-stone-500 w-full my-0 items-center text-black">
 
               <div className="flex flex-col h-[600px] w-full bg-stone-400">
 
                 {/* Background */}
-                <div className="w-full min-h-[300px] bg-[url(../../public/assets/Ellen/Mindscape_Ellen_Joe_Partial.png)] bg-no-repeat bg-cover bg-right"></div>
+                <div className="w-full min-h-[300px] bg-center bg-[url(../../public/assets/Ellen/Ellen_banner3.png)] bg-no-repeat bg-cover"></div>
 
                 {/* Header*/}
-                <div className="relative w-full min-h-[200px] h-full bg-stone-700">
+                <div className="relative w-full min-h-[200px] h-full bg-stone-800">
 
                   {/* Profile Picture */}
-                  <div className="absolute -top-20 md:-top-20 mx-4 w-[125px] h-[125px] md:w-[175px] md:h-[175px] bg-white rounded-full border-4 border-stone-700">
-                    
+
+                  <div className="absolute -top-20 md:-top-20 mx-5 w-[125px] h-[125px] md:w-[175px] md:h-[175px] bg-white rounded-full border-4 border-stone-700">
+                    <div className="flex overflow-hidden h-full w-full bg-cover bg-no-repeat bg-[url(../../public/assets/Ellen/Avatar_Ellen_Joe.png)]"></div>  
                   </div>
-                  {/* Name */}
+                  {/* Name */} 
                   <div className="flex flex-col pt-[110px] px-5 text-overflow-hidden text-white">
-                    <div>
+                    <div className="font-bold text-3xl">
                       Ellen Joe
                     </div>
                     <div>
                       @nomnomshark
                     </div>
                     <div className="mt-5">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    shork gorl
                     </div>
                   </div>
 
@@ -263,19 +259,19 @@ export default function Home() {
               <div className="flex flex-row w-full h-[40px] bg-stone-700 justify-around text-center text-white text-sm sm:text-lg select-none">
                 <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("posts")}>
                   Posts
-                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-pink-600 w-1/2 h-[5px]"></div>
                 </div>
                 <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("replies")}>
                   Replies
-                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-pink-600 w-1/2 h-[5px]"></div>
                 </div>
                 <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("media")}>
                   Media
-                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-pink-600 w-1/2 h-[5px]"></div>
                 </div>
                 <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("likes")}>
                   Likes
-                  <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
+                  <div className="group hidden group-hover:block absolute bottom-0 bg-pink-600 w-1/2 h-[5px]"></div>
                 </div>
               </div>
 
@@ -326,12 +322,15 @@ export default function Home() {
               </div>
 
               <div className="flex w-full h-[15%] bg-black text-white text-xl justify-end px-10 py-3">
+
                 {"View More >"}
               </div>
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] min-w-[200px] h-[300px] rounded-3xl p-6 bg-stone-700 bg-opacity-65"></div>
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[200px] h-[500px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
+              <Weather/>
+            </div>
 
           </div>
 
