@@ -1,8 +1,6 @@
 'use client'
 import Image from "next/image";
 import Navbar from "../components/navbar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../../public/assets/users/userdata.json'
 
 export default function Home() {
