@@ -1,9 +1,12 @@
+'use client'
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Feed from "../components/feed";
+import Comment from "../components/comment";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../../public/assets/users/userdata.json'
+import { useState } from 'react';
 
 export default function Home() {
 
@@ -12,6 +15,94 @@ export default function Home() {
   const max = 2
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  const [activeTab, setActiveTab] = useState("posts")
+
+
+  function renderComponent(){
+    switch(activeTab){
+      case "posts":
+        /* posts should generate user's posts or reposts */
+        return <div className="w-full">
+                  <div className="flex flex-col justify-center items-center gap-3 py-5">
+                    <Feed /> 
+                    <Feed />
+                    <Comment />
+                    <Feed /> 
+                    <Comment />
+                    <Feed />
+                    <Feed /> 
+                  </div>
+               </div>
+
+      case "replies":
+        /* replies should generate user's replies */
+        return <div className="w-full">
+                  <div className="flex flex-col justify-center items-center gap-4 py-4">
+
+                    <Comment />
+                    <Comment />
+                    <Comment />
+                    <Comment />
+                    <Comment />
+                    <Comment />
+
+                  </div>
+               </div>
+
+      case "media":
+        /* media should show all images user has posted */
+        return <div className="w-full">
+                  <div className="grid grid-cols-3 gap-2 repeat(3, 1fr) px-2">
+                    <div className="h-[150px] bg-stone-400"> green</div>
+                    <div className="h-[150px] bg-stone-300">black</div>
+                    <div className="h-[150px] bg-stone-200">white</div>
+                    <div className="h-[150px] bg-stone-400"> green</div>
+                    <div className="h-[150px] bg-stone-300">black</div>
+                    <div className="h-[150px] bg-stone-200">white</div>
+                    <div className="h-[150px] bg-stone-400"> green</div>
+                    <div className="h-[150px] bg-stone-300">black</div>
+                    <div className="h-[150px] bg-stone-200">white</div>
+                    <div className="h-[150px] bg-stone-400"> green</div>
+                    <div className="h-[150px] bg-stone-300">black</div>
+                    <div className="h-[150px] bg-stone-200">white</div>
+                    <div className="h-[150px] bg-stone-300">black</div>
+                    <div className="h-[150px] bg-stone-200">white</div>
+                  </div>
+               </div>
+
+      case "likes":
+        /*likes should show posts, comments, or replies the user has liked*/
+        return <div className="w-full">
+                  <div className="flex flex-col justify-center items-center gap-3 py-5">
+                    <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
+                    <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
+                    <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+
+                    <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber2]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
+                    <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber2]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
+                    <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber2]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+
+                    <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
+                    <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
+                    <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+
+                    <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber2]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
+                    <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber2]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
+                    <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber2]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
+                    <Comment />
+                    <Comment />
+                    <Feed />
+                    <Comment />
+                    <Feed /> 
+                    <Comment />
+                    <Feed />
+                    <Feed /> 
+                  </div>
+              </div>
+              
+    }
+  }
 
 
   return (
@@ -43,7 +134,7 @@ export default function Home() {
             </div>
           </div>
           <div className="h-full w-full  p-5 text-pretty text-balance bg-opacity-65">
-            New Eridu hotest topic in today !!!
+            New Eridu hottest topic in today !!!
           </div>
 
         </div>
@@ -134,9 +225,9 @@ export default function Home() {
 
           {/* Profile */}
 
-          <div className="flex flex-col h-screen min-w-[300px] md:min-w-[500px] w-[80%] max-w-[500px] lg:w-full bg-stone-400 items-center text-black overflow-y-scroll  md:pl-0 md:pr-0  lg:pr-0 md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
+          <div className="flex flex-col h-screen min-w-[300px] md:min-w-[500px] w-[80%] max-w-[500px] lg:w-full items-center text-black overflow-y-scroll  md:pl-0 md:pr-0  lg:pr-0 md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
 
-            <div className="flex flex-col bg-stone-500 w-full w-full my-5 items-center text-black">
+            <div className="flex flex-col bg-stone-600 bg-opacity-60 w-full w-full my-5 items-center text-black">
 
               <div className="flex flex-col h-[600px] w-full bg-stone-400">
 
@@ -147,7 +238,7 @@ export default function Home() {
                 <div className="relative w-full min-h-[200px] h-full bg-stone-700">
 
                   {/* Profile Picture */}
-                  <div className="absolute -top-20 md:-top-20 mx-4  w-[125px] h-[125px] md:w-[175px] md:h-[175px] bg-white rounded-full border-4 border-stone-700">
+                  <div className="absolute -top-20 md:-top-20 mx-4 w-[125px] h-[125px] md:w-[175px] md:h-[175px] bg-white rounded-full border-4 border-stone-700">
                     
                   </div>
                   {/* Name */}
@@ -170,19 +261,19 @@ export default function Home() {
 
               {/* Changeable UI Controller */}
               <div className="flex flex-row w-full h-[40px] bg-stone-700 justify-around text-center text-white text-sm sm:text-lg select-none">
-                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("posts")}>
                   Posts
                   <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
                 </div>
-                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("replies")}>
                   Replies
                   <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
                 </div>
-                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("media")}>
                   Media
                   <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
                 </div>
-                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group">
+                <div className="relative w-1/4 pb-3 h-full flex items-end justify-center group" onClick={() => setActiveTab("likes")}>
                   Likes
                   <div className="group hidden group-hover:block absolute bottom-0 bg-red-400 w-1/2 h-[5px]"></div>
                 </div>
@@ -190,9 +281,8 @@ export default function Home() {
 
 
               {/* Changeable UI*/}
-              <div className="flex w-full h-screen" >
-                Hello
-
+              <div className="flex w-full" >
+                {renderComponent()}
               </div>
               
             </div>
