@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Navbar from "./components/navbar";
 import Feed from "./components/feed";
@@ -8,14 +9,41 @@ import Weather from "./components/weather";
 import Chatbox from "./components/chatbox";
 import Notifications from "./components/notifications";
 import MusicPlayer from "./components/musicplayer";
+import Loading from "./loading";
+import { useState , useEffect} from 'react';
 
 export default function Home() {
 
-  {/* Inclusive Randomizer */}
-  const min = 0 
-  const max = 2
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  const randomNumber2 = Math.floor(Math.random() * (max - min + 1)) + min;
+  const [loading, setLoading] = useState(true)   //Loading Switch
+  const [fadeOut, setFadeOut] = useState(false);  //Loading Fade
+  const [randomNumber, setRandomNumber] = useState(null);
+  const [randomNumber2, setRandomNumber2] = useState(null);
+    
+  //Loading Timer
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setFadeOut(true); // Trigger fade-out before hiding
+
+      setTimeout(() => {
+        setLoading(false); // Hide after fade-out
+      }, 400); // Make sure fade-out lasts for 1 second (1000ms)
+
+    }, 200); // Start fading out after 200ms
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Inclusive Randomizer 
+  useEffect(() => {
+    const min = 0;
+    const max = 2;
+    setRandomNumber(Math.floor(Math.random() * (max - min + 1)) + min);
+    setRandomNumber2(Math.floor(Math.random() * (max - min + 1)) + min);
+  }, []);
+
+  // Loading state, ensure that the numbers are generated before rendering the feed
+
 
 
   return (
@@ -31,6 +59,9 @@ export default function Home() {
       </div>
       
       <div className="flex flex-col w-full">
+
+        {/* Loading Screen */}
+        {loading && (<div className={`fixed w-full h-full z-50  ${fadeOut ? "opacity-0" : "opacity-100"} transition-opacity duration-1000 overflow-hidden`}> <Loading /> </div> )} 
 
         {/* MainPage */}
         <div className="flex flex-row w-full h-full py-10 justify-center text-xl font-bold ">

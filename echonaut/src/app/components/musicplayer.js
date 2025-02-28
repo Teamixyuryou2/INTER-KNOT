@@ -14,7 +14,7 @@ export default function MusicPlayer(){
       <div className={toggle ? "absolute w-[250px] h-[250px] top-0 p-0 mr-1 right-10 rounded-md shadow-md text-white bg-stone-700 text-md font-bold group-focus-within:scale-100 transition-all duration-150 origin-top-right" 
         : "absolute items-start w-[100px] h-[100px] top-0 p-0 mr-1 right-10 rounded-md shadow-md text-white bg-stone-700 text-md font-bold scale-0 transition-all duration-150 origin-top-right"}>
         <div className="flex flex-col justify-start overflow-hidden">
-          <audio controls type="audio/mpeg" src="../../../public/assets/music/01. BITE!.mp3"/>
+          <audio controls type="audio/mpeg" src="/assets/music/01. BITE!.mp3"/>
         </div>
       </div>
     </div>
