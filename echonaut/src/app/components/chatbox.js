@@ -20,7 +20,7 @@ export default function Chatbox(){
             </div>
 
             {/* Chatbox Body*/}
-            <div className="flex h-[65%] min-w-[100px]overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
+            <div className="flex h-[65%] min-w-[100px] overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
                 <div className="flex flex-col w-full ">
 
                     {/*Text Bubbles Layout FRIEND*/}

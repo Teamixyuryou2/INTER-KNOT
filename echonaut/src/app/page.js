@@ -6,6 +6,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import userData from '../../public/assets/users/userdata.json'
 import Weather from "./components/weather";
 import Chatbox from "./components/chatbox";
+import Notifications from "./components/notifications";
 
 export default function Home() {
 
@@ -35,22 +36,8 @@ export default function Home() {
 
 
             {/* Profile Box */}
-            <div className="hidden lg:block  w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-stone-500  bg-opacity-65 overflow-hidden">
-
-              <div className="flex w-full h-1/3 min-h-[50px] px-4 items-center bg-opacity-65">
-                {/*Profile Picture */}
-                <div className= "rounded-full bg-stone-200 w-[50px] h-[50px] max-w-[100px] max-h-[100px] min-w-[50px] min-w-[50px] bg-opacity-65">
-
-                </div>
-                {/*Name*/}
-                <div className= "rounded-full bg-stone-200 w-[200px] h-[40px] min-w-[50px] min-w-[50px] mx-2 bg-opacity-65">
-
-                </div>
-              </div>
-              <div className="h-full w-full  p-5 text-pretty text-balance bg-opacity-65">
-                New Eridu hotest topic in today !!!
-              </div>
-
+            <div className="hidden lg:block w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-opacity-65 overflow-hidden">
+              <Notifications/>
             </div>
 
             {/* Chatbox */}
@@ -106,9 +93,9 @@ export default function Home() {
 
             </div> */}
 
-            <div className="flex-col hidden md:block w-[70%] min-h-[200px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
+            <div className="flex-col hidden md:block w-[70%] min-h-[270px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
 
-              <div className="flex w-full h-[17%] bg-black text-white text-2xl tracking-wide items-center px-2">
+              <div className="flex w-full h-[17%] min-h-[50px] bg-black text-white text-2xl tracking-wide items-center px-2">
                 <h1 className="ml-5">
                 Trending
                 </h1>
@@ -128,13 +115,15 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex w-full h-[15%] bg-black text-white text-lg justify-end items-center px-10 py-3">
-                {"View More >"}
+              <div className="flex w-full h-[15%] min-h-[30px] bg-black text-white text-lg justify-end items-center px-10 py-3">
+                <div>
+                  {"View More >"}
+                </div>
               </div>
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[350px] h-[550px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[320px] h-[550px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
               <Weather/>
             </div>
 
