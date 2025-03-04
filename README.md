@@ -35,6 +35,10 @@ This project is a work in progress, and contributions or feedback are always wel
 This will display badges/icons for the tech stack when viewed on platforms like GitHub. Let me know if you need any modifications! 😊
 
 
+
+https://github.com/user-attachments/assets/9b8db47b-e537-4537-b95a-6fbec7501b1c
+
+
 [![Image from Gyazo](https://i.gyazo.com/5a9d1b2ea4ea2abdacdab3206a227ac2.gif)](https://gyazo.com/5a9d1b2ea4ea2abdacdab3206a227ac2)
 
 
