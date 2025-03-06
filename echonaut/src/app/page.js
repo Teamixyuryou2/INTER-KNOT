@@ -11,14 +11,30 @@ import Notifications from "./components/notifications";
 import MusicPlayerContainer from "./components/musiccontainer";
 import Loading from "./loading";
 import { useState , useEffect} from 'react';
+import { db } from "./firebase/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 
 
 export default function Home() {
 
   const [loading, setLoading] = useState(true)   //Loading Switch
   const [fadeOut, setFadeOut] = useState(false);  //Loading Fade
+  const [postList, setPostList] = useState([]);
   const [randomNumber, setRandomNumber] = useState(null);
   const [randomNumber2, setRandomNumber2] = useState(null);
+
+  const postsCollectionRef = collection(db, "posts");
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(postsCollectionRef)
+      setPostList(data.docs.map((doc) => doc.data()));
+    }
+    getPosts()
+  },[]);
+
+  // let mydata = postList
+  // console.log(mydata[0])
     
   //Loading Timer
   useEffect(() => {
@@ -91,7 +107,7 @@ export default function Home() {
             <div className="relative flex flex-col min-w-[450px] w-full lg:w-1/4 my-5 items-center text-black space-y-4 ">
               {/* Turn this into a component */}
 
-
+              <Feed name={postList[0]?.userId} message={postList[0]?.description} image={postList[0]?.media} profilepicture={userData.Lighter.avatar}/>
               <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
               <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
               <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
