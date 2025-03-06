@@ -15,6 +15,7 @@ export default function Navbar(){
   const [Profile, setProfile] = useState(userSettings.Ellen);
   function profileSwap(Agent){setProfile(Agent)};
 
+
     return(
       <nav className="bg-stone-800 text-white sticky top-0 left-0 z-50 justify-self-start h-screen w-full min-w-[100px] m-0 shadow-lg justify-items-center flex flex-col select-none">
         <header id="site-logo" className="flex justify-center my-3 p-3 text-2xl">
@@ -58,24 +59,24 @@ export default function Navbar(){
 
         <div className="justify-center flex flex-col w-full">
           <div className="justify-center flex w-full">
-            <Navbutton label="Home" graphic={faHouse} linkTo={"/"} buttonAccentColor={"text-pink-600"}/>
+            <Navbutton label="Home" graphic={faHouse} buttonTextColor={Profile.hoverTextColor} linkTo={"/"} buttonAccentColor={"text-pink-600"}/>
           </div>
           
           <div className="justify-center flex w-full">
-            <Navbutton label="Messages" graphic={faEnvelope} linkTo={"/messages"} />
+            <Navbutton label="Messages" graphic={faEnvelope} buttonTextColor={Profile.hoverTextColor} linkTo={"/messages"} />
           </div>
 
           <div className="justify-center flex w-full">
-            <Navbutton label="Notifications" graphic={faBell} linkTo={"/"} />
+            <Navbutton label="Notifications" graphic={faBell} buttonTextColor={Profile.hoverTextColor} linkTo={"/"} />
           </div>
 
           <div className="justify-center flex w-full">
-            <Navbutton label="Profile" graphic={faUser} linkTo={"/profile"} />
+            <Navbutton label="Profile" graphic={faUser} buttonTextColor={Profile.hoverTextColor} linkTo={"/profile"} />
           </div>
         </div>
 
         <div className="flex justify-center">
-          <button className="bg-pink-600 text-black font-bold text-xl w-[70%] xl:w-[90%] p-3 mx-[5%] my-3 flex justify-center flex-row rounded-xl hover:brightness-[85%] transition-all duration-150 ease-in">
+          <button className={`${Profile.bgColor} text-black font-bold text-xl w-[70%] xl:w-[90%] p-3 mx-[5%] my-3 flex justify-center flex-row rounded-xl hover:brightness-[85%] transition-all duration-150 ease-in`}>
             <div className="xl:hidden">
             <FontAwesomeIcon icon={faPenToSquare} className="xl:hidden"/>
             </div>
