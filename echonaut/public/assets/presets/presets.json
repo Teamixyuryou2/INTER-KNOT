@@ -3,13 +3,17 @@
         "displayName": "Ellen Joe",
         "userName": "@nomnomshark",
         "profilePic": "/assets/Ellen/Avatar_Ellen_Joe.png",
-        "bgColor": "bg-pink-600"
+        "bgColor": "bg-pink-600",
+        "textColor": "text-pink-600",
+        "hoverTextColor": "hover:text-pink-600"
     },
 
     "Belle": {
         "displayName": "Belle",
         "userName": "@Phaethon",
         "profilePic": "/assets/Belle/Avatar_Belle1.png",
-        "bgColor": "bg-orange-200"
+        "bgColor": "bg-orange-400",
+        "textColor": "text-orange-400",
+        "hoverTextColor": "hover:text-orange-400"
     }
 }
