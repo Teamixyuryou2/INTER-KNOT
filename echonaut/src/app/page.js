@@ -8,9 +8,10 @@ import userData from '../../public/assets/users/userdata.json'
 import Weather from "./components/weather";
 import Chatbox from "./components/chatbox";
 import Notifications from "./components/notifications";
-import MusicPlayer from "./components/musicplayer";
+import MusicPlayerContainer from "./components/musiccontainer";
 import Loading from "./loading";
 import { useState , useEffect} from 'react';
+
 
 export default function Home() {
 
@@ -55,7 +56,7 @@ export default function Home() {
       </div>
 
       <div className="">
-        <MusicPlayer/>
+        <MusicPlayerContainer/>
       </div>
       
       <div className="flex flex-col w-full">
