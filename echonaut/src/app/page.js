@@ -125,7 +125,7 @@ export default function Home() {
               {/* Turn this into a component */}
 
               <Feed name={postList[0]?.userId} message={postList[0]?.description} image={postList[0]?.media} profilepicture={userData.Lighter.avatar}/>
-              <Feed name={usersList[0]?.names} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
+              <Feed name={usersList[1]?.names} message={usersList[1]?.bio} image={usersList[1]?.image} profilepicture={userData.Caesar.avatar}/>
               <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
               <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
 
