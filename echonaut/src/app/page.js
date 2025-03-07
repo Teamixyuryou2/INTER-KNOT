@@ -11,9 +11,9 @@ import Notifications from "./components/notifications";
 import MusicPlayerContainer from "./components/musiccontainer";
 import Loading from "./loading";
 import { useState , useEffect} from 'react';
+
 import { db } from "./firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-
 
 export default function Home() {
 
@@ -25,6 +25,7 @@ export default function Home() {
 
   const postsCollectionRef = collection(db, "posts");
 
+  //FireStore
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef)
@@ -32,6 +33,21 @@ export default function Home() {
     }
     getPosts()
   },[]);
+
+  //MongoDB UNFINISHED
+
+  const [usersList, setUsersList] = useState([])
+
+  useEffect(() => {
+     fetch("/api/users")
+       .then((response) => response.json())
+       .then((data) => {
+          console.log("Data fetched from MongoDB:", data)
+          console.log(data.users)
+          setUsersList(data.users)
+       })
+       .catch((err) => console.error(err));
+   }, []);
 
   // let mydata = postList
   // console.log(mydata[0])
@@ -91,6 +107,7 @@ export default function Home() {
             {/* Profile Box */}
             <div className="hidden lg:block w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-opacity-65 overflow-hidden">
               <Notifications/>
+  
             </div>
 
             {/* Chatbox */}
@@ -108,7 +125,7 @@ export default function Home() {
               {/* Turn this into a component */}
 
               <Feed name={postList[0]?.userId} message={postList[0]?.description} image={postList[0]?.media} profilepicture={userData.Lighter.avatar}/>
-              <Feed name={userData.Lighter.name} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
+              <Feed name={usersList[0]?.names} message={userData.Lighter.posts[randomNumber]} image={userData.Lighter.image[randomNumber]} profilepicture={userData.Lighter.avatar}/>
               <Feed name={userData.Koleda.name} message={userData.Koleda.posts[randomNumber]} image={userData.Koleda.image[randomNumber]} profilepicture={userData.Koleda.avatar}/>
               <Feed name={userData.Caesar.name} message={userData.Caesar.posts[randomNumber]} image={userData.Caesar.image[randomNumber]} profilepicture={userData.Caesar.avatar}/>
 
