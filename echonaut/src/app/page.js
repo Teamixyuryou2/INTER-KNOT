@@ -73,12 +73,12 @@ export default function Home() {
 
 
             {/* Profile Box */}
-            <div className="hidden lg:block w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-opacity-65 overflow-hidden">
+            <div className="hidden lg:block w-[70%] min-h-[200px] min-w-[250px] lg:h-[300px] rounded-3xl bg-opacity-65 overflow-hidden shadow-lg">
               <Notifications/>
             </div>
 
             {/* Chatbox */}
-            <div className="hidden flex-col lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl overflow-hidden">
+            <div className="hidden flex-col lg:block w-[70%] min-w-[250px] min-h-[400px] h-[500px] rounded-3xl overflow-hidden shadow-lg">
               <Chatbox/>
             </div>
 
@@ -119,10 +119,10 @@ export default function Home() {
           <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start max-w-[600px] lg:w-1/3 text-black pl-6">
 
             {/*Search*/}
-            <div className="h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-80 hover:opacity-100 focus:opacity-100 hidden md:flex">
-              <div className="flex flex-row h-[40px] w-full opacity-[60%] focus:opacity-[100%] bg-stone-200 rounded-3xl justify-center items-center px-2">
+            <div className="h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-80 hover:opacity-100 focus:opacity-100 hidden md:flex font-[ZZZFont] font-normal tracking-wide">
+              <div className="flex flex-row h-[40px] w-full opacity-[60%] focus:opacity-[100%] bg-stone-200 rounded-3xl justify-center items-center px-2 shadow-lg">
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="w-[40px] h-[40px] " />
-                <input type="text" className="bg-transparent h-[30px] w-full border-none focus:outline-none text-white invert" placeholder="Search . . ."/>
+                <input type="text" className="bg-transparent h-[30px] w-full border-none focus:outline-none text-white invert" placeholder="Search. . ."/>
               </div>
             </div>
 
@@ -140,15 +140,17 @@ export default function Home() {
 
               <div className="w-full h-[68%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
                 <div className= "flex flex-col ">
-                  <div className="bg-stone-500 w-full h-[60px] p-4">#H.A.N.D</div>
-                  <div className="bg-stone-400 w-full h-[60px] p-4">#HollowZERO</div>
-                  <div className="bg-stone-300 w-full h-[60px] p-4">#404Event</div>
-                  <div className="bg-stone-200 w-full h-[60px] p-4">#BoxGalaxy</div>
+                  <div className="bg-stone-500 w-full h-[60px] p-4">#ObolSquad</div>
+                  <div className="bg-stone-400 w-full h-[60px] p-4">#AnbyDemara</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4">#H.A.N.D</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4">#ChatisThisREAL?</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4">#AstraYao</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4">#BoxGalaxy</div>
                   <div className="bg-stone-100 w-full h-[60px] p-4">#EriduForYou</div>
-                  <div className="bg-stone-100 w-full h-[60px] p-4">#Ehn-a-Nu</div>
-                  <div className="bg-stone-300 w-full h-[60px] p-4">#ChatisThisREAL?</div>
-                  <div className="bg-stone-200 w-full h-[60px] p-4">#GoldenBangboo</div>
-                  <div className="bg-stone-100 w-full h-[60px] p-4">#Vision</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4">#Ehn-na-Nu</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4">#HollowZero</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4">#GoldenBangboo</div>
+                  <div className="bg-stone-400 w-full h-[60px] p-4">#Vision</div>
                 </div>
               </div>
 
@@ -160,7 +162,7 @@ export default function Home() {
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[320px] h-[550px] rounded-3xl">
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[320px] h-[550px] rounded-3xl shadow-lg">
               <Weather/>
             </div>
 
