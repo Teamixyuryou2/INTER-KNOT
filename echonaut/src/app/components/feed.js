@@ -3,14 +3,14 @@ import {faHeart ,  faComment, faRetweet, faEllipsis} from '@fortawesome/free-sol
 
 export default function Feed({ name, image , message, profilepicture }){
     return(
-        <div className="bg-stone-800 min-w-[300px] w-[85%] max-w-[6000px] h-[550px] rounded-2xl overflow-hidden text-white bg-opacity-65">
+        <div className="bg-stone-800 min-w-[300px] w-[85%] max-w-[6000px] h-[570px] rounded-2xl overflow-hidden text-white bg-opacity-65">
             {/* Message */}
             <div className=" w-full h-[15%]">
-                <div className ="relative flex flex-row w-full h-[70px] px-4 justify-center items-end gap-2">
+                <div className ="relative flex flex-row w-full h-[70px] px-4 justify-center items-end gap-2 font-[ZZZFont] font-normal">
                     <div className="flex w-[60px] h-[60px] rounded-full justify-center items-center border-2 ">
                         <img src={ profilepicture } alt="" className="w-auto h-auto" />
                     </div>
-                    <div className="flex bg-stone-900 mb-3 w-[70%] h-[40px] rounded-full items-center px-5">
+                    <div className="flex bg-black mb-2 w-[70%] h-[40px] rounded-full border-4 border-stone-700 outline outline-2 outline-black items-center p-5">
                         { name }
                     </div>
                     <div className="flex mb-6 mx-1 hover:cursor-pointer">
@@ -19,12 +19,12 @@ export default function Feed({ name, image , message, profilepicture }){
                 </div>
             </div>
 
-            <div className ="w-full text-balance text-wrap text-overflow-hidden text-sm px-2 mx-3 pb-2">
+            <div className ="w-[94%] text-wrap text-overflow-hidden text-[17px] p-2 mt-[-5px] mx-3 mb-3 pb-2 font-[ZZZFont] font-normal bg-black outline outline-4 outline-stone-500/65 rounded-lg">
                 { message }
             </div>
 
             {/*Imagery*/}
-            <div className="w-full h-[65%] bg-opacity-65 overflow-hidden">
+            <div className="w-full h-[64%] bg-opacity-65 overflow-hidden">
                 <img src={ image } alt="" className="w-full h-full object-cover" />
             </div>
 

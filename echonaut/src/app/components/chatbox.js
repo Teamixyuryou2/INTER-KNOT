@@ -9,7 +9,7 @@ export default function Chatbox(){
                 <div className = "flex bg-white border-white border rounded-full ml-3 h-[50px] w-[50px] items-center justify-center text-black">
                     <Image height={50} width={50} alt="ruby pfp" style={{objectFit: "contain"}} src={"/assets/Ellen/ruby.png"} className="rounded-full"/>
                 </div>
-                <div className="flex flex-col bg-transparent rounded-3xl">
+                <div className="flex flex-col bg-transparent rounded-3xl font-[ZZZFont] font-normal">
                     <div className="text-lg">
                         Ruby
                     </div>
@@ -20,7 +20,7 @@ export default function Chatbox(){
             </div>
 
             {/* Chatbox Body*/}
-            <div className="flex h-[65%] min-w-[100px] overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl">
+            <div className="flex h-[65%] min-w-[100px] overflow-y-auto overflow-x-hidden scrollbar-hidden shadow-2xl text-sm font-[ZZZFont] font-normal">
                 <div className="flex flex-col w-full ">
 
                     {/*Text Bubbles Layout FRIEND*/}
@@ -74,7 +74,7 @@ export default function Chatbox(){
                 
                 {/* Chatbox Input */}
                 <div className="flex p-0 bg-white ml-2 rounded-3xl overflow-hidden w-3/4 max-h-[100px] break-words">
-                    <textarea className="flex w-full h-[45px] rounded-3xl text-lg p-2 outline-0 resize-none scrollbar-hidden scroll-smooth">
+                    <textarea className="flex w-full h-[45px] rounded-3xl text-lg p-2 outline-0 resize-none scrollbar-hidden scroll-smooth font-[ZZZFont]">
                     </textarea>
                 </div>
                 {/* Chatbox send */}

@@ -17,7 +17,7 @@ export default function Navbar(){
 
 
     return(
-      <nav className="bg-stone-800 text-white sticky top-0 left-0 z-50 justify-self-start h-screen w-full min-w-[100px] m-0 shadow-lg justify-items-center flex flex-col select-none">
+      <nav className="bg-stone-800 text-white sticky top-0 left-0 z-50 justify-self-start h-screen w-full min-w-[100px] m-0 shadow-lg justify-items-center flex flex-col select-none font-[ZZZFont] font-normal">
         <header id="site-logo" className="flex justify-center my-3 p-3 text-2xl">
           <Image src='/assets/INTER-KNOT.png' width={80} height={80} alt="logo" />
         </header>
@@ -27,8 +27,8 @@ export default function Navbar(){
             <div id="user-container" className="w-[94%] rounded-lg backdrop-brightness-125">
               <div id="user" className="flex flex-col 2xl:flex-row justify-center items-center my-5">
                 <Image src={Profile.profilePic} width={80} height={80} className='rounded-full border-2 border-white' alt="profile-pic"/>
-                <div id="profile-text" className="hidden md:flex flex-col mx-3 p-2">
-                  <div id="display-name" className="flex justify-center 2xl:justify-start font-bold text-xl tracking-wide">
+                <div id="profile-text" className="hidden md:flex flex-col mx-1 p-2">
+                  <div id="display-name" className="flex justify-center 2xl:justify-start text-xl tracking-wide">
                     {Profile.displayName}
                   </div>
                   <div id="username" className="flex justify-center opacity-[60%]">
@@ -39,8 +39,8 @@ export default function Navbar(){
             </div>
           </a>
 
-          <div className={toggle ? "absolute w-auto top-28 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold group-focus-within:scale-100 transition-all duration-150 origin-bottom-left" 
-                : "absolute items-start w-auto top-24 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-bold scale-0 transition-all duration-150 origin-bottom-left"}>
+          <div className={toggle ? "absolute w-auto top-28 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-normal group-focus-within:scale-100 transition-all duration-150 origin-bottom-left" 
+                : "absolute items-start w-auto top-24 p-2 m-2 min-w-max left-full rounded-md shadow-md text-white bg-stone-900 text-md font-normal scale-0 transition-all duration-150 origin-bottom-left"}>
             <div className="flex flex-col justify-start">
                 Switch Accounts
                 <div className='flex flex-col'>
@@ -59,7 +59,7 @@ export default function Navbar(){
 
         <div className="justify-center flex flex-col w-full">
           <div className="justify-center flex w-full">
-            <Navbutton label="Home" graphic={faHouse} buttonTextColor={Profile.hoverTextColor} linkTo={"/"} buttonAccentColor={"text-pink-600"}/>
+            <Navbutton label="Home" graphic={faHouse} buttonTextColor={Profile.hoverTextColor} linkTo={"/"} />
           </div>
           
           <div className="justify-center flex w-full">

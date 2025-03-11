@@ -5,7 +5,7 @@ import {faHeart, faRetweet, faComment} from '@fortawesome/free-solid-svg-icons';
 
 export default function Comment({ name, image , message, profilepicture }){
     return(
-        <div className="bg-black w-full min-h-[100px] rounded-3xl bg-stone-800 bg-opacity-65 overflow-hidden text-white ">
+        <div className="w-full min-h-[100px] rounded-3xl bg-stone-800 bg-opacity-65 overflow-hidden text-white ">
             {/* Picture and Name */}
             <div className="flex flex-row gap-2 p-4 border-b-2">
 

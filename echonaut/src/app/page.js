@@ -116,7 +116,7 @@ export default function Home() {
 
           {/* For you */}
           
-          <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start max-w-[600px] lg:w-1/3 text-black pl-6 opacity-85">
+          <div className="flex flex-col h-full md:w-1/3 w-0 gap-5 items-start max-w-[600px] lg:w-1/3 text-black pl-6">
 
             {/*Search*/}
             <div className="h-[100px] w-[70%] min-w-[200px] items-center top-0 left-0 opacity-80 hover:opacity-100 focus:opacity-100 hidden md:flex">
@@ -130,37 +130,37 @@ export default function Home() {
 
             </div> */}
 
-            <div className="flex-col hidden md:block w-[70%] min-h-[270px] min-w-[200px] h-[500px] rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden">
+            <div className="flex-col hidden md:block w-[70%] min-h-[270px] min-w-[200px] h-[500px] opacity-85 rounded-3xl bg-stone-600 bg-opacity-65 overflow-hidden font-[ZZZFont] font-normal">
 
               <div className="flex w-full h-[17%] min-h-[50px] bg-black text-white text-2xl tracking-wide items-center px-2">
-                <h1 className="ml-5">
+                <h1 className="ml-5 select-none">
                 Trending
                 </h1>
               </div>
 
               <div className="w-full h-[68%] overflow-y-auto overflow-x-hidden scrollbar-hidden">
                 <div className= "flex flex-col ">
-                  <div className="bg-stone-500 w-full h-[60px] p-4"># H.A.N.D</div>
-                  <div className="bg-stone-400 w-full h-[60px] p-4"># HollowZERO</div>
-                  <div className="bg-stone-300 w-full h-[60px] p-4"># 404Event</div>
-                  <div className="bg-stone-200 w-full h-[60px] p-4"># BoxGalaxy</div>
-                  <div className="bg-stone-100 w-full h-[60px] p-4"># EriduForYou</div>
-                  <div className="bg-stone-100 w-full h-[60px] p-4"># Ehn-a-Nu</div>
-                  <div className="bg-stone-300 w-full h-[60px] p-4"># ChatisThisREAL?</div>
-                  <div className="bg-stone-200 w-full h-[60px] p-4"># GoldenBangboo</div>
-                  <div className="bg-stone-100 w-full h-[60px] p-4"># Vision</div>
+                  <div className="bg-stone-500 w-full h-[60px] p-4">#H.A.N.D</div>
+                  <div className="bg-stone-400 w-full h-[60px] p-4">#HollowZERO</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4">#404Event</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4">#BoxGalaxy</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4">#EriduForYou</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4">#Ehn-a-Nu</div>
+                  <div className="bg-stone-300 w-full h-[60px] p-4">#ChatisThisREAL?</div>
+                  <div className="bg-stone-200 w-full h-[60px] p-4">#GoldenBangboo</div>
+                  <div className="bg-stone-100 w-full h-[60px] p-4">#Vision</div>
                 </div>
               </div>
 
               <div className="flex w-full h-[15%] min-h-[30px] bg-black text-white text-lg justify-end items-center px-10 py-3">
-                <div>
+                <div className="hover:cursor-pointer">
                   {"View More >"}
                 </div>
               </div>
 
             </div>
 
-            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[320px] h-[550px] rounded-3xl p-6 bg-gradient-to-b from-sky-500 to-indigo-500 bg-opacity-65">
+            <div className="hidden md:block min-w-[200px] w-[70%] min-h-[320px] h-[550px] rounded-3xl">
               <Weather/>
             </div>
 
