@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 
 export default function Weather(){
-    const apiKey = "62c8370009022c37b85d7235fdb4dfac";
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
     let city = "New York"
 
     const [currWeather, setWeather] = useState({});
 
     async function getWeatherData(){
         try{
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`)
+            fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
             .then((response) => response.json())
             .then((data) => {
                 setWeather(data)
@@ -48,21 +48,23 @@ export default function Weather(){
         }
     }, []);
 
-    if(!currWeather || !currWeather.main){
+    if(!currWeather || !currWeather.current){
         return <div className="flex justify-center items-center h-full w-full text-center text-white text-xl">Loading Weather Data...</div>
     }
 
-    const tempRounded = currWeather.main ? Math.round(currWeather.main.temp) : null;
+    const tempRounded = currWeather.current ? Math.round(currWeather.current.temp_f) : null;
 
     return(
-        <div id="widget-wrapper" className="flex flex-col w-full h-full bg-transparent text-white text-center items-center justify-center font-[Rubik] font-normal select-none">
-            <div id="weather-graphic" className="scale-[200%] p-4">☀️</div>
+        <div id="widget-wrapper" className="flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-400/75 to-indigo-500/75 rounded-xl">
+            <div id="weather-graphic" className="scale-[130%] p-3">
+                <img className="" src={currWeather.current.condition.icon} />
+            </div>
             <div id="temperature" className="flex text-4xl xl:text-5xl 2xl:text-[70px] justify-center p-0 xl:p-1">
                 {tempRounded != null ? `${tempRounded}°F` : "Loading..."}
             </div>
             <div id="city-name" className="text-xl xl:text-2xl 2xl:text-3xl p-1">New Eridu</div>
             <div id="date-time" className="text-base xl:text-xl p-2">{formatTime()} </div>
-            <div className="text-base xl:text-xl">Ether particle concentration: {currWeather.main.humidity}%</div>
+            <div className="text-base xl:text-xl">Ether particle concentration: {currWeather.current.humidity}%</div>
         </div>
     )
 }

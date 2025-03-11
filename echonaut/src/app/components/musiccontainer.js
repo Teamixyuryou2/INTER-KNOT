@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { faArrowLeft, faArrowRight, faCirclePause, faCirclePlay, faMusic } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import trackList from "../../../public/assets/music/tracklist.json"
 
 export default function MusicPlayerContainer(){
   const audioPlayer = useRef();
@@ -21,6 +22,23 @@ export default function MusicPlayerContainer(){
     } else {
       audioPlayer.current.pause();
       cancelAnimationFrame(animationRef.current);
+    }
+  }
+
+  const [currentSong, setCurrentSong] = useState(0);
+  const songHandler = (direction) => {
+    togglePlayPause();
+    setCurrentTime(0);
+    progressBar.current.value = 0;
+    if (direction == "previous"){
+      if (currentSong == 0){
+        setCurrentSong(trackList.length-1)
+        return
+      }
+      setCurrentSong((currentSong-1) % trackList.length)
+    }
+    if (direction == "forward"){
+      setCurrentSong((currentSong+1) % trackList.length)
     }
   }
 
@@ -61,15 +79,24 @@ export default function MusicPlayerContainer(){
           <FontAwesomeIcon icon={faMusic} className="flex scale-150 m-3 text-black"/>
         </div>
       </div>
-      <div className={openPlayer ? "absolute z-10 overflow-hidden w-[300px] h-[300px] top-28 p-0 mr-1 right-10 rounded-md shadow-md text-white bg-stone-800 text-md font-bold group-focus-within:scale-100 transition-all duration-150 origin-top-right select-none" 
+      <div className={openPlayer ? "absolute z-10 overflow-hidden w-[350px] h-[350px] top-28 p-0 mr-1 right-10 rounded-md shadow-md text-white bg-stone-800 text-md font-bold group-focus-within:scale-100 transition-all duration-150 origin-top-right select-none" 
         : "absolute z-10 overflow-hidden items-start w-[300px] h-[300px] top-28 p-0 mr-1 right-10 rounded-md shadow-md text-white bg-stone-800 text-md font-bold scale-0 transition-all duration-150 origin-top-right select-none"}>
         <div className="flex flex-col justify-center items-center overflow-hidden">
-          <div className="flex flex-col items-center h-[65%] w-[65%] border-white border-double border-[4px] rounded-full mt-3 overflow-hidden">
-            <img style={{transform:`rotate(${rotation}deg)`}} src="/assets/music/BITE!_(Album).png"/>
+          <div className="flex flex-col items-center h-[54%] w-[54%] border-white border-double border-[4px] rounded-full mt-3 overflow-hidden">
+            <img style={{transform:`rotate(${rotation}deg)`}} src={trackList[currentSong].albumart}/>
             <div className="flex absolute top-[100px] h-[10%] w-[10%] bg-black border outline outline-offset-8 rounded-full"></div>
           </div>
-          <audio ref={audioPlayer} src="/assets/music/01. BITE!.mp3" preload="metadata"></audio>
-          <div id="controls" className="flex flex-col justify-center items-center mt-2">
+          <div className="font-[ZZZFont] text-lg font-normal tracking-wide mt-2">
+            <div className={trackList[currentSong].title.length > 23 ? "mx-7 w-full h-6 text-nowrap overflow-visible animate-scrollright"
+              : "mx-7 w-full h-6"}>
+              {trackList[currentSong].title}
+            </div>
+            <div className="flex justify-center mx-7">
+              {trackList[currentSong].artist}
+            </div>
+          </div>
+          <audio ref={audioPlayer} src={trackList[currentSong].source} preload="metadata"></audio>
+          <div id="controls" className="flex flex-col justify-center items-center mt-2 font-normal font-[ZZZFont]">
             <div className="flex flex-row">
               {/* current time */}
               <div className="">{calculateTime(currentTime)}</div>
@@ -81,14 +108,28 @@ export default function MusicPlayerContainer(){
               <div>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
             </div>
             <div className="flex flex-row">
-              <button className="flex items-center hover:text-pink-600"><FontAwesomeIcon className="text-[22px] mr-1" icon={faArrowLeft} /></button>
+              <button onClick={() => songHandler("previous")} className="flex items-center hover:text-pink-600"><FontAwesomeIcon className="text-[22px] mr-1" icon={faArrowLeft} /></button>
               <button className="text-white justify-center items-center w-[50px] h-[50px] text-[32px] hover:text-pink-600" onClick={togglePlayPause}>
                 {isPlaying ? <FontAwesomeIcon icon={faCirclePause}/> : <FontAwesomeIcon icon={faCirclePlay}/>}
               </button>
-              <button className="flex items-center hover:text-pink-600"><FontAwesomeIcon className="text-[22px] ml-1" icon={faArrowRight} /></button>
+              <button onClick={() => songHandler("forward")} className="flex items-center hover:text-pink-600"><FontAwesomeIcon className="text-[22px] ml-1" icon={faArrowRight} /></button>
             </div>
           </div>
         </div>
+        <style jsx>{`
+          @keyframes RightToLeft {
+            from {
+              transform: translateX(15%);
+            }
+            to {
+              transform: translateX(-15%);
+            }
+          }
+          
+          .animate-scrollright {
+          animation: RightToLeft 7s infinite ease-in-out;
+          }
+        `}</style>
       </div>
     </div>
   )

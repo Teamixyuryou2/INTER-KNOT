@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function Notifications(){
   return(
-    <div className="flex flex-col w-full h-full bg-stone-900 bg-opacity-65 hover:bg-opacity-100 transition-all duration-150 ease-in overflow-hidden">
+    <div className="flex flex-col w-full h-full bg-stone-900 bg-opacity-65 hover:bg-opacity-100 transition-all duration-150 ease-in overflow-hidden font-[ZZZFont] tracking-normal font-normal">
       
       {/* Header */}
       <div className="flex w-full h-[19%] min-h-[50px] bg-black text-white text-2xl tracking-wide items-center px-2">
-        <h1 className="ml-5">
+        <h1 className="ml-5 select-none">
           Notifications
         </h1>
       </div>
