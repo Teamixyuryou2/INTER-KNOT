@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react";
 
 export default function Weather(){
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+    // const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+    const apiKey = "04cf0c873b0246acba223450251103"
     let city = "New York"
 
     const [currWeather, setWeather] = useState({});
@@ -25,6 +26,7 @@ export default function Weather(){
    
     // Clock
     const [time, setTime] = useState(new Date());
+    let dayNight = 0;
     function formatTime(){
         let hours = time.getHours().toString().padStart(2, "0");
         let minutes = time.getMinutes().toString().padStart(2, "0");
@@ -34,6 +36,9 @@ export default function Weather(){
         let date = time.getDate();
         let dayString = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let monthString = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        dayNight = time.getHours();
+        console.log(dayNight);
+        console.log((dayNight < 18) || (dayNight > 6))
         
         return `${hours}:${minutes}:${seconds} - ${dayString[day]} ${monthString[month]} ${date}`;
     }
@@ -55,7 +60,9 @@ export default function Weather(){
     const tempRounded = currWeather.current ? Math.round(currWeather.current.temp_f) : null;
 
     return(
-        <div id="widget-wrapper" className="flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-400/75 to-indigo-500/75 rounded-xl">
+        <div id="widget-wrapper" className={(dayNight < 18) || (dayNight > 6) ? "flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-400/75 to-indigo-500/75 rounded-xl"
+            : "flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-900/75 to-indigo-600/75 rounded-xl"
+        }>
             <div id="weather-graphic" className="scale-[130%] p-3">
                 <img className="" src={currWeather.current.condition.icon} />
             </div>
