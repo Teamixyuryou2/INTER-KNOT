@@ -72,6 +72,7 @@ export default function MusicPlayerContainer(){
     progressBar.current.max = seconds;
   }
 
+  
   // USE EFFECT TO UPDATE END TIME OF SONG EVERYTIME SONG IS CHANGED, LOOKS FOR METADATA. IF META DATA REAL SET TIME
   useEffect(() => {
     if (audioPlayer.current) {
