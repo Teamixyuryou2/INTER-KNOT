@@ -84,14 +84,14 @@ export default function MusicPlayerContainer(){
         <div className="flex flex-col justify-center items-center overflow-hidden">
           <div className="flex flex-col items-center h-[54%] w-[54%] border-white border-double border-[4px] rounded-full mt-3 overflow-hidden">
             <img style={{transform:`rotate(${rotation}deg)`}} src={trackList[currentSong].albumart}/>
-            <div className="flex absolute top-[100px] h-[10%] w-[10%] bg-black border outline outline-offset-8 rounded-full"></div>
+            <div className="flex absolute top-[95px] h-[35px] w-[35px] bg-black border outline outline-offset-8 rounded-full"></div>
           </div>
-          <div className="font-[ZZZFont] text-lg font-normal tracking-wide mt-2">
-            <div className={trackList[currentSong].title.length > 23 ? "mx-7 w-full h-6 text-nowrap overflow-visible animate-scrollright"
-              : "mx-7 w-full h-6"}>
+          <div className="flex flex-col justify-center font-[ZZZFont] text-lg font-normal tracking-wide mt-2">
+            <div className={trackList[currentSong].title.length > 23 ? "flex mx-7 w-full h-6 text-nowrap overflow-visible animate-scrollright"
+              : "flex justify-center w-full h-6 text-white"}>
               {trackList[currentSong].title}
             </div>
-            <div className="flex justify-center mx-7">
+            <div className="flex justify-center mx-7 text-base text-stone-300">
               {trackList[currentSong].artist}
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function MusicPlayerContainer(){
               <div className="">{calculateTime(currentTime)}</div>
               {/* progress bar */}
               <div>
-                <input ref={progressBar} className="bg-pink-600 accent-pink-600 mt-1 mx-2" type="range" defaultValue="0" onChange={changeRange}/>
+                <input ref={progressBar} className="bg-pink-600 accent-pink-600 mt-1 mx-2 hover:cursor-pointer" type="range" defaultValue="0" onChange={changeRange}/>
               </div>
               {/* duration */}
               <div>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>

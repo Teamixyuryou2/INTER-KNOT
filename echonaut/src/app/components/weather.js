@@ -26,7 +26,7 @@ export default function Weather(){
    
     // Clock
     const [time, setTime] = useState(new Date());
-    let dayNight = 0;
+    const [dayNight, setDayNight] = useState(new Date().getHours());
     function formatTime(){
         let hours = time.getHours().toString().padStart(2, "0");
         let minutes = time.getMinutes().toString().padStart(2, "0");
@@ -36,9 +36,6 @@ export default function Weather(){
         let date = time.getDate();
         let dayString = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let monthString = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        dayNight = time.getHours();
-        console.log(dayNight);
-        console.log((dayNight < 18) || (dayNight > 6))
         
         return `${hours}:${minutes}:${seconds} - ${dayString[day]} ${monthString[month]} ${date}`;
     }
@@ -46,6 +43,7 @@ export default function Weather(){
     useEffect(() => {
         const intervalID = setInterval(() => {
             setTime(new Date());
+            setDayNight(new Date().getHours());
         }, 1000);
 
         return () => {
@@ -54,13 +52,13 @@ export default function Weather(){
     }, []);
 
     if(!currWeather || !currWeather.current){
-        return <div className="flex justify-center items-center h-full w-full text-center text-white text-xl">Loading Weather Data...</div>
+        return <div className="flex justify-center items-center h-full w-full text-center text-white text-xl bg-gradient-to-b from-sky-400/75 to-indigo-500/75 rounded-xl">Loading Weather Data...</div>
     }
 
     const tempRounded = currWeather.current ? Math.round(currWeather.current.temp_f) : null;
 
     return(
-        <div id="widget-wrapper" className={(dayNight < 18) || (dayNight > 6) ? "flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-400/75 to-indigo-500/75 rounded-xl"
+        <div id="widget-wrapper" className={(dayNight < 18) && (dayNight > 6) ? "flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-400/75 to-indigo-500/75 rounded-xl"
             : "flex flex-col w-full h-full text-white text-center items-center justify-center font-[Rubik] font-normal select-none p-6 bg-gradient-to-b from-sky-900/75 to-indigo-600/75 rounded-xl"
         }>
             <div id="weather-graphic" className="scale-[130%] p-3">
