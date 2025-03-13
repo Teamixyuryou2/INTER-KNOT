@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function Weather(){
-    // const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-    const apiKey = "04cf0c873b0246acba223450251103"
+    const apiKey = process.env.NEXT_PUBLIC_WEATHERAPI_KEY;
     let city = "New York"
 
     const [currWeather, setWeather] = useState({});
