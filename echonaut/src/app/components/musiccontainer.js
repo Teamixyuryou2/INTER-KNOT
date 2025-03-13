@@ -94,8 +94,6 @@ export default function MusicPlayerContainer(){
     }
   }, [audioPlayer.current]); // Rerender when audioplayer exists
 
-
-
   const calculateTime = (secs) =>{
     const minutes = Math.floor(secs / 60);
     const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`; 
