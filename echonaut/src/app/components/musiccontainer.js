@@ -16,6 +16,7 @@ export default function MusicPlayerContainer(){
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
+
     if (!prevValue) {
       audioPlayer.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying);
@@ -27,8 +28,9 @@ export default function MusicPlayerContainer(){
 
   const [currentSong, setCurrentSong] = useState(0);
   const songHandler = (direction) => {
-    togglePlayPause();
-    setCurrentTime(0);
+    cancelAnimationFrame(animationRef.current) 
+    setCurrentTime(0);  // Resets Song Duration
+    setRotation(0);    // Resets Rotation
     progressBar.current.value = 0;
     if (direction == "previous"){
       if (currentSong == 0){
@@ -40,6 +42,14 @@ export default function MusicPlayerContainer(){
     if (direction == "forward"){
       setCurrentSong((currentSong+1) % trackList.length)
     }
+      
+      setTimeout(() => {
+        audioPlayer.current.currentTime = 0; // Ensure it starts from 0 every time song changes
+        if (isPlaying) {
+          audioPlayer.current.play();        
+          animationRef.current = requestAnimationFrame(whilePlaying);
+        }
+      }, 100); // Small delay to allow state updates
   }
 
   const [currentTime, setCurrentTime] = useState(0);
@@ -51,13 +61,40 @@ export default function MusicPlayerContainer(){
     animationRef.current = requestAnimationFrame(whilePlaying);
   }
 
-  const [duration, setDuration] = useState(0);
-  useEffect(() => {
+  const [duration, setDuration] = useState(null);
+
+
+  // THIS IS JUST FOR HANDLING METADATA
+  const handleMetadataLoaded = () => {
     const seconds = Math.floor(audioPlayer.current.duration);
-    audioPlayer.current.volume=0.05;
+    audioPlayer.current.volume = 0.05;
     setDuration(seconds);
     progressBar.current.max = seconds;
-  }, [audioPlayer?.current?.loadedmetadata, audioPlayer.current?.readyState]);
+  }
+
+  // USE EFFECT TO UPDATE END TIME OF SONG EVERYTIME SONG IS CHANGED, LOOKS FOR METADATA. IF META DATA REAL SET TIME
+  useEffect(() => {
+    if (audioPlayer.current) {
+      audioPlayer.current.addEventListener('loadedmetadata', handleMetadataLoaded);
+    }
+
+    // Cleanup return
+    return () => {
+      if (audioPlayer.current) {
+        audioPlayer.current.removeEventListener('loadedmetadata', handleMetadataLoaded);
+      }
+    };
+  }, [currentSong]);  // This effect will run every time the currentSong changes
+
+
+  // USE EFFECT JUST TO RENDER THE INITIAL FIRST RENDER SONG
+  useEffect(() => {
+    if (audioPlayer.current && audioPlayer.current.duration) {       //CHECKS FOR audioplayer EXIST OR NO
+      handleMetadataLoaded()
+    }
+  }, [audioPlayer.current]); // Rerender when audioplayer exists
+
+
 
   const calculateTime = (secs) =>{
     const minutes = Math.floor(secs / 60);
@@ -84,14 +121,14 @@ export default function MusicPlayerContainer(){
         <div className="flex flex-col justify-center items-center overflow-hidden">
           <div className="flex flex-col items-center h-[54%] w-[54%] border-white border-double border-[4px] rounded-full mt-3 overflow-hidden">
             <img style={{transform:`rotate(${rotation}deg)`}} src={trackList[currentSong].albumart}/>
-            <div className="flex absolute top-[100px] h-[10%] w-[10%] bg-black border outline outline-offset-8 rounded-full"></div>
+            <div className="flex absolute top-[95px] h-[35px] w-[35px] bg-black border outline outline-offset-8 rounded-full"></div>
           </div>
-          <div className="font-[ZZZFont] text-lg font-normal tracking-wide mt-2">
-            <div className={trackList[currentSong].title.length > 23 ? "mx-7 w-full h-6 text-nowrap overflow-visible animate-scrollright"
-              : "mx-7 w-full h-6"}>
+          <div className="flex flex-col justify-center font-[ZZZFont] text-lg font-normal tracking-wide mt-2">
+            <div className={trackList[currentSong].title.length > 23 ? "flex mx-7 w-full h-6 text-nowrap overflow-visible animate-scrollright"
+              : "flex justify-center w-full h-6 text-white"}>
               {trackList[currentSong].title}
             </div>
-            <div className="flex justify-center mx-7">
+            <div className="flex justify-center mx-7 text-base text-stone-300">
               {trackList[currentSong].artist}
             </div>
           </div>
@@ -102,7 +139,7 @@ export default function MusicPlayerContainer(){
               <div className="">{calculateTime(currentTime)}</div>
               {/* progress bar */}
               <div>
-                <input ref={progressBar} className="bg-pink-600 accent-pink-600 mt-1 mx-2" type="range" defaultValue="0" onChange={changeRange}/>
+                <input ref={progressBar} className="bg-pink-600 accent-pink-600 mt-1 mx-2 hover:cursor-pointer" type="range" defaultValue="0" onChange={changeRange}/>
               </div>
               {/* duration */}
               <div>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
