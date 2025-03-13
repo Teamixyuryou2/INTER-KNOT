@@ -120,7 +120,6 @@ export default function Home() {
           {/* Feed */}
 
           <div className="relative flex flex-col h-screen min-w-[455px] md:min-w-[400px] w-[60%] max-w-[450px] lg:w-full  items-center text-black overflow-y-scroll pr-[60px] md:pl-0 md:pr-0 sm:pr-4 lg:pr-0 md:border-r-2 lg:border-x-2 scrollbar-hidden overflow-x-hidden">
-
             <div className="relative flex flex-col min-w-[450px] w-full lg:w-1/4 my-5 items-center text-black space-y-4 ">
               {/* Turn this into a component */}
 
@@ -143,7 +142,6 @@ export default function Home() {
 
               
             </div>
-
           </div>
 
 
