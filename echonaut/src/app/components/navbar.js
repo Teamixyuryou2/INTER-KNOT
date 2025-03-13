@@ -15,7 +15,6 @@ export default function Navbar(){
   const [Profile, setProfile] = useState(userSettings.Ellen);
   function profileSwap(Agent){setProfile(Agent)};
 
-
     return(
       <nav className="bg-stone-800 text-white sticky top-0 left-0 z-50 justify-self-start h-screen w-full min-w-[100px] m-0 shadow-lg justify-items-center flex flex-col select-none font-[ZZZFont] font-normal">
         <header id="site-logo" className="flex justify-center my-3 p-3 text-2xl">
